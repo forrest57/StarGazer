@@ -6,12 +6,13 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "test": "jest --watch -o",
+    "test": "jest --coverage --watchAll",
     "web": "expo start --web"
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.12",
     "@react-navigation/native-stack": "^6.8.0",
+    "axios": "^0.27.2",
     "expo": "~46.0.9",
     "expo-status-bar": "~1.4.0",
     "jest": "^26.6.3",
@@ -21,10 +22,11 @@
     "react-native-heroicons": "^3.0.0",
     "react-native-safe-area-context": "4.3.1",
     "react-native-screens": "~3.15.0",
-    "react-native-svg": "^13.1.0",
+    "react-native-svg": "12.3.0",
     "twrnc": "^3.4.0"
   },
   "jest": {
+    "testEnvironment": "jsdom",
     "preset": "jest-expo",
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg)"
@@ -40,7 +42,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
-    "jest-expo-enzyme": "^1.4.0",
+    "jest-date-mock": "^1.0.8",
     "react-test-renderer": "^18.0.0"
   },
   "private": true

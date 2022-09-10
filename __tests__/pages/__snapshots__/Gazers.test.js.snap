@@ -1,0 +1,332 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Home /> renders correctly 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Array [
+      Object {
+        "marginTop": 0,
+      },
+      Object {
+        "backgroundColor": "#1f2937",
+        "display": "flex",
+        "flexDirection": "column",
+        "height": "100%",
+        "justifyContent": "space-between",
+        "paddingTop": 28,
+        "width": "100%",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderRadius": 6,
+          "display": "flex",
+          "flexDirection": "row",
+          "marginBottom": 12,
+          "paddingBottom": 4,
+          "paddingLeft": 20,
+          "paddingRight": 20,
+          "paddingTop": 4,
+          "width": "100%",
+        },
+        Object {
+          "justifyContent": "space-between",
+        },
+      ]
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        Object {
+          "display": "flex",
+          "marginTop": 8,
+          "transform": Array [
+            Object {
+              "scale": 1,
+            },
+          ],
+          "width": "75%",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        activeOpacity={1}
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#374151",
+            "borderRadius": 6,
+            "display": "flex",
+            "paddingBottom": 8,
+            "paddingLeft": 8,
+            "paddingRight": 8,
+            "paddingTop": 8,
+            "width": "100%",
+          }
+        }
+      >
+        <Text />
+      </View>
+    </View>
+    <Text
+      style={
+        Object {
+          "color": "gray",
+          "fontSize": 28,
+        }
+      }
+    >
+      loremIpsum
+    </Text>
+    <View
+      collapsable={false}
+      style={
+        Object {
+          "display": "flex",
+          "marginTop": 8,
+          "transform": Array [
+            Object {
+              "scale": 1,
+            },
+          ],
+          "width": "75%",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        activeOpacity={1}
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#374151",
+            "borderRadius": 6,
+            "display": "flex",
+            "paddingBottom": 8,
+            "paddingLeft": 8,
+            "paddingRight": 8,
+            "paddingTop": 8,
+            "width": "100%",
+          }
+        }
+      >
+        <Text />
+      </View>
+    </View>
+  </View>
+  <RCTScrollView
+    data={
+      Array [
+        Object {
+          "avatar_url": null,
+          "id": 1,
+          "login": "lorem",
+        },
+        Object {
+          "avatar_url": null,
+          "id": 2,
+          "login": "lorem",
+        },
+        Object {
+          "avatar_url": null,
+          "id": 3,
+          "login": "lorem",
+        },
+      ]
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    style={
+      Object {
+        "paddingLeft": 20,
+        "paddingRight": 20,
+        "width": "100%",
+      }
+    }
+    viewabilityConfigCallbackPairs={Array []}
+  >
+    <View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#374151",
+              "borderRadius": 6,
+              "display": "flex",
+              "flexDirection": "row",
+              "marginBottom": 8,
+              "marginTop": 8,
+              "paddingBottom": 16,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+              "paddingTop": 16,
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": null,
+              }
+            }
+            style={
+              Object {
+                "aspectRatio": 1,
+                "borderRadius": 9999,
+              }
+            }
+          />
+          <Text
+            style={
+              Object {
+                "color": "gray",
+                "fontSize": 22,
+                "marginLeft": 15,
+              }
+            }
+          >
+            lorem
+          </Text>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#374151",
+              "borderRadius": 6,
+              "display": "flex",
+              "flexDirection": "row",
+              "marginBottom": 8,
+              "marginTop": 8,
+              "paddingBottom": 16,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+              "paddingTop": 16,
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": null,
+              }
+            }
+            style={
+              Object {
+                "aspectRatio": 1,
+                "borderRadius": 9999,
+              }
+            }
+          />
+          <Text
+            style={
+              Object {
+                "color": "gray",
+                "fontSize": 22,
+                "marginLeft": 15,
+              }
+            }
+          >
+            lorem
+          </Text>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#374151",
+              "borderRadius": 6,
+              "display": "flex",
+              "flexDirection": "row",
+              "marginBottom": 8,
+              "marginTop": 8,
+              "paddingBottom": 16,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+              "paddingTop": 16,
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": null,
+              }
+            }
+            style={
+              Object {
+                "aspectRatio": 1,
+                "borderRadius": 9999,
+              }
+            }
+          />
+          <Text
+            style={
+              Object {
+                "color": "gray",
+                "fontSize": 22,
+                "marginLeft": 15,
+              }
+            }
+          >
+            lorem
+          </Text>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</RCTSafeAreaView>
+`;

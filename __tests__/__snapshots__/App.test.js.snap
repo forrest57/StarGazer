@@ -1,0 +1,302 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> renders correctly 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    Array [
+      Object {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <RNSScreenStack
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <RNSScreen
+      collapsable={false}
+      forwardedRef={[Function]}
+      gestureResponseDistance={
+        Object {
+          "bottom": -1,
+          "end": -1,
+          "start": -1,
+          "top": -1,
+        }
+      }
+      nativeBackButtonDismissalEnabled={false}
+      onAppear={[Function]}
+      onDisappear={[Function]}
+      onDismissed={[Function]}
+      onHeaderBackButtonClicked={[Function]}
+      onNativeDismissCancelled={[Function]}
+      onTransitionProgress={[Function]}
+      onWillDisappear={[Function]}
+      replaceAnimation="push"
+      stackPresentation="push"
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      swipeDirection="horizontal"
+    >
+      <RNSScreenStackHeaderConfig
+        backButtonInCustomView={false}
+        backgroundColor="rgb(255, 255, 255)"
+        color="rgb(0, 122, 255)"
+        direction="ltr"
+        disableBackButtonMenu={false}
+        hidden={true}
+        hideBackButton={false}
+        largeTitleHideShadow={false}
+        title="Home"
+        titleColor="rgb(28, 28, 30)"
+        topInsetEnabled={false}
+        translucent={false}
+      />
+      <View
+        style={
+          Array [
+            Object {
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "rgb(242, 242, 242)",
+            },
+            undefined,
+          ]
+        }
+      >
+        <RCTSafeAreaView
+          emulateUnlessSupported={true}
+          style={
+            Array [
+              Object {
+                "marginTop": 0,
+              },
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#1f2937",
+                "display": "flex",
+                "flexDirection": "column",
+                "height": "100%",
+                "justifyContent": "center",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "gray",
+                "fontSize": 46,
+                "fontStyle": "italic",
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Stargazer
+          </Text>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "width": "75%",
+              }
+            }
+          >
+            <TextInput
+              autoFocus={true}
+              cursorColor="white"
+              onChangeText={[Function]}
+              placeholder="User"
+              placeholderTextColor="gray"
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#374151",
+                    "borderRadius": 6,
+                    "paddingBottom": 12,
+                    "paddingLeft": 12,
+                    "paddingRight": 12,
+                    "paddingTop": 12,
+                    "width": "41.666667%",
+                  },
+                  Object {
+                    "color": "white",
+                    "fontSize": 28,
+                  },
+                ]
+              }
+            />
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "gray",
+                    "fontSize": 46,
+                  },
+                  Object {
+                    "width": "8.333333%",
+                  },
+                ]
+              }
+            >
+              /
+            </Text>
+            <TextInput
+              cursorColor="white"
+              onChangeText={[Function]}
+              placeholder="Repo"
+              placeholderTextColor="gray"
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#374151",
+                    "borderRadius": 6,
+                    "paddingBottom": 12,
+                    "paddingLeft": 12,
+                    "paddingRight": 12,
+                    "paddingTop": 12,
+                    "width": "41.666667%",
+                  },
+                  Object {
+                    "color": "white",
+                    "fontSize": 28,
+                  },
+                ]
+              }
+            />
+          </View>
+          <View
+            collapsable={false}
+            style={
+              Object {
+                "display": "flex",
+                "marginTop": 8,
+                "transform": Array [
+                  Object {
+                    "scale": 1,
+                  },
+                ],
+                "width": "75%",
+              }
+            }
+          >
+            <View
+              accessible={true}
+              activeOpacity={1}
+              collapsable={false}
+              focusable={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#374151",
+                  "borderRadius": 6,
+                  "display": "flex",
+                  "paddingBottom": 8,
+                  "paddingLeft": 8,
+                  "paddingRight": 8,
+                  "paddingTop": 8,
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "gray",
+                    "fontSize": 32,
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                Look gazers up
+              </Text>
+            </View>
+          </View>
+          <View
+            collapsable={false}
+            style={
+              Object {
+                "display": "flex",
+                "marginTop": 8,
+                "transform": Array [
+                  Object {
+                    "scale": 1,
+                  },
+                ],
+                "width": "75%",
+              }
+            }
+          >
+            <View
+              accessible={true}
+              activeOpacity={1}
+              collapsable={false}
+              focusable={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#374151",
+                  "borderRadius": 6,
+                  "display": "flex",
+                  "paddingBottom": 8,
+                  "paddingLeft": 8,
+                  "paddingRight": 8,
+                  "paddingTop": 8,
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "gray",
+                    "fontSize": 32,
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                Recent repos
+              </Text>
+            </View>
+          </View>
+        </RCTSafeAreaView>
+      </View>
+    </RNSScreen>
+  </RNSScreenStack>
+</RNCSafeAreaProvider>
+`;

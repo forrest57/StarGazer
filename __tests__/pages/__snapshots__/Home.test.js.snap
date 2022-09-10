@@ -157,7 +157,7 @@ exports[`<Home /> renders correctly 1`] = `
           }
         }
       >
-        Look gazers up
+        Check Gazers
       </Text>
     </View>
   </View>

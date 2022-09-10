@@ -9,9 +9,13 @@ describe('<gazerCard />', () => {
     const tree = renderer.create(<GazerCard text='lorem' />).toJSON()
     expect(tree).toMatchSnapshot()
   })
-  it('renders passed text props', () => {
+  it('renders passed props', () => {
     const prop = 'lorem'
-    const gazerComponent = renderer.create(<GazerCard text={prop} />).toJSON()
-    expect(gazerComponent.children[0].children[0]).toBe(prop)
+    const imgUri = 'https://placekitten.com/200/300'
+    const gazerComponent = renderer
+      .create(<GazerCard login={prop} avatar={imgUri} />)
+      .toJSON()
+    expect(gazerComponent.children[1].children[0]).toBe(prop)
+    expect(gazerComponent.children[0].props.source.uri).toBe(imgUri)
   })
 })

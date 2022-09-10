@@ -1,27 +1,52 @@
 import { StatusBar } from 'expo-status-bar'
 import { useState } from 'react'
-import { StyleSheet, Text, View, SafeAreaView, TextInput } from 'react-native'
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  TextInput,
+  Alert,
+} from 'react-native'
 import tw from 'twrnc'
 import AnimatedButton from '../components/animatedButton'
 import GazerCard from '../components/gazerCard'
+import { validateRequest } from '../sharedLogic'
 
-export default Home = () => {
-  // const data = [
-  //   { id: 1, text: 'loremipsum' },
-  //   { id: 5, text: 'loremipsum' },
-  //   { id: 3, text: 'loremipsum' },
-  //   { id: 2, text: 'loremipsum' },
-  //   { id: 4, text: 'loremipsum' },
-  //   { id: 6, text: 'loremipsum' },
-  //   { id: 7, text: 'loremipsum' },
-  //   { id: 8, text: 'loremipsum' },
-  //   { id: 9, text: 'loremipsum' },
-  //   { id: 10, text: 'loremipsum' },
-  // ]
+export default Home = ({ navigation }) => {
   const [repo, setRepo] = useState('')
   const [user, setUser] = useState('')
-  //required in order to not have to destructure props multiple times
-  const cardRenderer = ({ item }) => <GazerCard text={item.text} />
+  const [isLoading, setIsLoading] = useState(false)
+
+  const validateAndRedirect = async () => {
+    const routeName = `${user}/${repo}`
+    setIsLoading(true)
+    try {
+      const res = await validateRequest(user, repo)
+      setIsLoading(false)
+      navigation.navigate('Gazers', { data: res.data, repo: routeName })
+    } catch (e) {
+      setIsLoading(false)
+      Alert.alert(...e)
+    }
+  }
+
+  const goToGazers = async () => await validateAndRedirect()
+  const goToRecent = () => !isLoading && navigation.navigate('recent')
+
+  //made for button animation reusability
+  const CheckButtonText = () => (
+    <View
+      style={tw` bg-gray-700 flex items-center justify-center rounded-md p-4 w-3/4`}>
+      <Text style={styles.buttonText}>Check Gazers</Text>
+    </View>
+  )
+  const RecentButtonText = () => (
+    <View
+      style={tw` bg-gray-700 flex items-center justify-center rounded-md p-4 w-3/4`}>
+      <Text style={styles.buttonText}>Recent repos</Text>
+    </View>
+  )
 
   return (
     <SafeAreaView
@@ -48,35 +73,18 @@ export default Home = () => {
           placeholderTextColor={'gray'}
         />
       </View>
-      <AnimatedButton text={'Look gazers up'} />
-      <AnimatedButton text={'Recent repos'} />
-      {/* <Animated.View style={[{ transform: [{ scale }] }, tw`w-3/4 my-2 flex `]}>
-        <Pressable
-          activeOpacity={1}
-          onPressIn={onPressIn}
-          onPressOut={onPressOut}
-          onPress={onPress}
-          style={tw`bg-gray-700 p-2 w-full rounded-md flex items-center`}>
-          <Text style={styles.buttonText}>let's gooo</Text>
-        </Pressable>
-      </Animated.View> */}
-      {/* <View style={tw`flex flex-row bg-gray-700 p-1  m-2 mt-7 rounded-md`}>
-        <TextInput
-          autoFocus={true}
-          cursorColor='white'
-          style={[tw`  w-6/7 p-3`, { fontSize: 28, color: 'white' }]}
-          placeholder='User/repo'
-        />
-        <Pressable style={tw` flex items-center justify-center flex-1`}>
-          <FontAwesome name='search' size={32} color='gray' />
-        </Pressable>
-      </View>
-      <FlatList
-        data={data}
-        renderItem={cardRenderer}
-        keyExtractor={(item) => item.id}
-      /> */}
-      <StatusBar style='auto' />
+      <AnimatedButton
+        width={'full'}
+        Component={CheckButtonText}
+        pressFunction={goToGazers}
+      />
+      <AnimatedButton
+        width={'full'}
+        Component={RecentButtonText}
+        pressFunction={goToRecent}
+      />
+
+      <StatusBar style='light' />
     </SafeAreaView>
   )
 }
@@ -93,7 +101,7 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
   },
   buttonText: {
-    fontSize: 36,
+    fontSize: 32,
     color: 'gray',
     fontWeight: 'bold',
   },

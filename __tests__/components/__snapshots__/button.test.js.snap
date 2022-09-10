@@ -1,7 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<animatedButtton /> renders at all 1`] = `
-<animatedButton
-  text="lorem"
-/>
+exports[`<animatedButtton /> renders correctly 1`] = `
+<View
+  collapsable={false}
+  style={
+    Object {
+      "display": "flex",
+      "marginTop": 8,
+      "transform": Array [
+        Object {
+          "scale": 1,
+        },
+      ],
+      "width": "75%",
+    }
+  }
+>
+  <View
+    accessible={true}
+    activeOpacity={1}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#374151",
+        "borderRadius": 6,
+        "display": "flex",
+        "paddingBottom": 8,
+        "paddingLeft": 8,
+        "paddingRight": 8,
+        "paddingTop": 8,
+        "width": "100%",
+      }
+    }
+  >
+    <Text>
+      lorem
+    </Text>
+  </View>
+</View>
 `;

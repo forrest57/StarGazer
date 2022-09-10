@@ -1,5 +1,5 @@
 import HomeScreen from './pages/Home'
-// import Gazers from './pages/Gazers'
+import Gazers from './pages/Gazers'
 // import Settings from './pages/Settings'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
@@ -17,7 +17,13 @@ export default function App() {
             headerShown: false,
           }}
         />
-        {/* <Stack.Screen name='Details' component={Gazers} /> */}
+        <Stack.Screen
+          name='Gazers'
+          component={Gazers}
+          options={{
+            headerShown: false,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   )

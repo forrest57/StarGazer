@@ -1,6 +1,6 @@
 import { Text, Animated, Pressable, StyleSheet } from 'react-native'
 import tw from 'twrnc'
-export default AnimatedButton = ({ text }) => {
+export default AnimatedButton = ({ Component, pressFunction, width }) => {
   const animation = new Animated.Value(0)
   const inputRange = [0, 1]
   const outputRange = [1, 0.95]
@@ -26,28 +26,24 @@ export default AnimatedButton = ({ text }) => {
     Animated.spring(animation, {
       toValue: 0,
       useNativeDriver: true,
-      delay: 0.75,
+      delay: 0.15,
       tension: 200,
       // bounciness: 200,
     }).start()
+    pressFunction()
   }
   return (
-    <Animated.View style={[{ transform: [{ scale }] }, tw`w-3/4 mt-2 flex `]}>
+    <Animated.View
+      style={[{ transform: [{ scale }] }, tw` mt-2 flex w-${width} `]}>
       <Pressable
         activeOpacity={1}
         onPressIn={onPressIn}
         onPressOut={onPressOut}
         onPress={onPress}
-        style={tw`bg-gray-700 p-2 w-full rounded-md flex items-center`}>
-        <Text style={styles.buttonText}>{text}</Text>
+        style={tw` rounded-md flex items-center`}>
+        {/* <Text style={styles.buttonText}>{text}</Text> */}
+        {Component}
       </Pressable>
     </Animated.View>
   )
 }
-const styles = StyleSheet.create({
-  buttonText: {
-    fontSize: 32,
-    color: 'gray',
-    fontWeight: 'bold',
-  },
-})
