@@ -10,8 +10,11 @@ import {
 } from 'react-native'
 import tw from 'twrnc'
 import AnimatedButton from '../components/animatedButton'
-import GazerCard from '../components/gazerCard'
-import { validateRequest } from '../sharedLogic'
+import {
+  getRepoHistory,
+  appendRepoToHistory,
+  validateRequest,
+} from '../sharedLogic'
 
 export default Home = ({ navigation }) => {
   const [repo, setRepo] = useState('')
@@ -23,18 +26,26 @@ export default Home = ({ navigation }) => {
     setIsLoading(true)
     try {
       const res = await validateRequest(user, repo)
+      const isPushed = await appendRepoToHistory(routeName)
+      console.log('IsPushed:', isPushed)
       setIsLoading(false)
       navigation.navigate('Gazers', { data: res.data, repo: routeName })
-    } catch (e) {
+    } catch (errorMsg) {
       setIsLoading(false)
-      Alert.alert(...e)
+      Alert.alert(...errorMsg)
     }
   }
 
-  const goToGazers = async () => await validateAndRedirect()
+  //TESTING FUNCTION
+  const logRecent = async () => {
+    const res = await getRepoHistory()
+    console.log('repo history:', res)
+  }
+
+  const goToGazers = async () => !isLoading && (await validateAndRedirect())
   const goToRecent = () => !isLoading && navigation.navigate('recent')
 
-  //made for button animation reusability
+  //made for AnimatedButton reusability
   const SearchButtonText = () => (
     <View
       style={tw` bg-gray-700 flex items-center justify-center rounded-md p-4 w-3/4`}>
@@ -55,6 +66,7 @@ export default Home = ({ navigation }) => {
         tw`flex flex-col items-center justify-center bg-gray-800 h-full  `,
       ]}>
       <Text style={styles.title}>Stargazer</Text>
+
       <View style={tw`flex flex-row w-3/4 items-center justify-between`}>
         <TextInput
           autoFocus={true}
@@ -73,6 +85,7 @@ export default Home = ({ navigation }) => {
           placeholderTextColor={'gray'}
         />
       </View>
+
       <AnimatedButton
         width={'full'}
         Component={SearchButtonText}
@@ -81,7 +94,7 @@ export default Home = ({ navigation }) => {
       <AnimatedButton
         width={'full'}
         Component={RecentButtonText}
-        pressFunction={goToRecent}
+        pressFunction={logRecent}
       />
 
       <StatusBar style='light' />

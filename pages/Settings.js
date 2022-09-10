@@ -1,20 +1,14 @@
 import { StatusBar } from 'expo-status-bar'
-import { View, SafeAreaView, FlatList, Text, StyleSheet } from 'react-native'
+import { View, SafeAreaView, Text, StyleSheet, Alert } from 'react-native'
 import tw from 'twrnc'
 import { Ionicons } from '@expo/vector-icons'
-import { SimpleLineIcons } from '@expo/vector-icons'
 import AnimatedButton from '../components/animatedButton'
+import { clearRepoHistory } from '../sharedLogic'
 
 const chevronLeftIcon = () => (
   <View
     style={tw` bg-gray-700 flex items-center justify-center rounded-md p-4 w-full`}>
     <Ionicons name='chevron-back-sharp' size={25} color='gray' />
-  </View>
-)
-const gearIcon = () => (
-  <View
-    style={tw` bg-gray-700 flex items-center justify-center rounded-md p-4 w-full `}>
-    <SimpleLineIcons name='settings' size={25} color='gray' />
   </View>
 )
 
@@ -27,7 +21,10 @@ const ResetButtonText = () => (
 
 export default SettingsPage = ({ navigation, route }) => {
   const goBack = () => navigation.goBack(null)
-
+  const resetHisory = async () => {
+    const res = await clearRepoHistory()
+    Alert.alert(...res)
+  }
   return (
     <SafeAreaView
       style={[
@@ -36,15 +33,14 @@ export default SettingsPage = ({ navigation, route }) => {
       ]}>
       <View style={tw`flex items-center justify-between flex-row w-3/5 ml-4`}>
         <AnimatedButton Component={chevronLeftIcon} pressFunction={goBack} />
-        <Text style={styles.header}>Options</Text>
+        <Text style={styles.header}>Settings</Text>
       </View>
       <View style={tw`h-full items-center justify-center`}>
-        <View
-          style={tw`flex flex-row 
-          bg-gray-700 w-3/4 h-10
-          items-center p-1 
-          justify-center  px-5 mb-3 rounded-md`}></View>
-        <AnimatedButton width='full' Component={ResetButtonText} />
+        <AnimatedButton
+          width='full'
+          Component={ResetButtonText}
+          pressFunction={resetHisory}
+        />
       </View>
     </SafeAreaView>
   )

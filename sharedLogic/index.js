@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import axios from 'axios'
 
 const baseUrl = 'https://api.github.com/repos/'
@@ -11,6 +12,7 @@ export const validateRequest = (user, repo) => {
   if (user && repo) {
     return getGazers(user, repo)
       .then((res) => {
+        appendRepoToHistory()
         return res
       })
       .catch((err) => {
@@ -26,4 +28,38 @@ export const validateRequest = (user, repo) => {
   } else {
     throw ['error', 'empty search fields, add data first']
   }
+}
+
+export const appendRepoToHistory = async (repoString) => {
+  try {
+    const lowerCased = repoString.toLowerCase()
+    const repoHistory = await getRepoHistory()
+    if (!repoHistory.includes(lowerCased)) {
+      repoHistory.unshift(lowerCased)
+      const stringified = JSON.stringify(repoHistory)
+      await AsyncStorage.setItem('RepoHistory', stringified)
+      return true
+    } else {
+      return false
+    }
+  } catch (e) {}
+}
+
+export const getRepoHistory = async () => {
+  const repoHistory = await AsyncStorage.getItem('RepoHistory')
+  if (repoHistory !== null) {
+    return JSON.parse(repoHistory)
+  } else {
+    return []
+  }
+}
+export const clearRepoHistory = async () => {
+  const successMsg = ['Success', 'Cleared repo history']
+  const failMsg = ['Error', 'There was an error clearing the cache history']
+
+  try {
+    const _ = await AsyncStorage.removeItem('RepoHistory')
+    return successMsg
+  } catch (_) {}
+  return failMsg
 }

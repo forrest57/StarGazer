@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1662839744938" clover="3.2.0">
-  <project timestamp="1662839744938" name="All files">
-    <metrics statements="70" coveredstatements="46" conditionals="16" coveredconditionals="9" methods="30" coveredmethods="14" elements="116" coveredelements="69" complexity="0" loc="70" ncloc="70" packages="4" files="7" classes="7"/>
+<coverage generated="1662840685853" clover="3.2.0">
+  <project timestamp="1662840685853" name="All files">
+    <metrics statements="57" coveredstatements="27" conditionals="9" coveredconditionals="5" methods="26" coveredmethods="10" elements="92" coveredelements="42" complexity="0" loc="57" ncloc="57" packages="3" files="6" classes="6"/>
     <package name="Stargazers_viewer">
-      <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="App.js" path="/home/forrest/Documents/code/Stargazers_viewer/App.js">
-        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
       </file>
     </package>
@@ -15,18 +15,18 @@
       <metrics statements="13" coveredstatements="9" conditionals="1" coveredconditionals="1" methods="5" coveredmethods="2"/>
       <file name="animatedButton.js" path="/home/forrest/Documents/code/Stargazers_viewer/components/animatedButton.js">
         <metrics statements="12" coveredstatements="8" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="1"/>
-        <line num="8" count="10" type="stmt"/>
-        <line num="9" count="10" type="stmt"/>
-        <line num="10" count="10" type="stmt"/>
-        <line num="11" count="10" type="stmt"/>
-        <line num="13" count="10" type="stmt"/>
+        <line num="8" count="8" type="stmt"/>
+        <line num="9" count="8" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="11" count="8" type="stmt"/>
+        <line num="13" count="8" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
-        <line num="21" count="10" type="stmt"/>
+        <line num="21" count="8" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
-        <line num="29" count="10" type="stmt"/>
+        <line num="29" count="8" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
         <line num="37" count="0" type="stmt"/>
-        <line num="39" count="10" type="stmt"/>
+        <line num="39" count="8" type="stmt"/>
       </file>
       <file name="gazerCard.js" path="/home/forrest/Documents/code/Stargazers_viewer/components/gazerCard.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -34,75 +34,56 @@
       </file>
     </package>
     <package name="Stargazers_viewer.pages">
-      <metrics statements="41" coveredstatements="30" conditionals="8" coveredconditionals="6" methods="20" coveredmethods="11"/>
+      <metrics statements="41" coveredstatements="18" conditionals="8" coveredconditionals="4" methods="20" coveredmethods="8"/>
       <file name="Gazers.js" path="/home/forrest/Documents/code/Stargazers_viewer/pages/Gazers.js">
         <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="5"/>
-        <line num="9" count="2" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
         <line num="10" count="2" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
         <line num="16" count="2" type="stmt"/>
-        <line num="23" count="2" type="stmt"/>
-        <line num="24" count="6" type="stmt"/>
-        <line num="27" count="2" type="stmt"/>
-        <line num="28" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="6" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
         <line num="30" count="2" type="stmt"/>
-        <line num="49" count="6" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="51" count="6" type="stmt"/>
       </file>
       <file name="Home.js" path="/home/forrest/Documents/code/Stargazers_viewer/pages/Home.js">
-        <metrics statements="22" coveredstatements="12" conditionals="4" coveredconditionals="2" methods="8" coveredmethods="3"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
+        <metrics statements="22" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="8" coveredmethods="0"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="35" count="1" type="cond" truecount="0" falsecount="2"/>
-        <line num="38" count="1" type="stmt"/>
-        <line num="39" count="1" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
-        <line num="45" count="1" type="stmt"/>
-        <line num="51" count="1" type="stmt"/>
-        <line num="65" count="0" type="stmt"/>
-        <line num="72" count="0" type="stmt"/>
-        <line num="92" count="2" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="91" count="0" type="stmt"/>
       </file>
       <file name="Settings.js" path="/home/forrest/Documents/code/Stargazers_viewer/pages/Settings.js">
         <metrics statements="9" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="3"/>
-        <line num="8" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
-        <line num="21" count="2" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
         <line num="22" count="1" type="stmt"/>
         <line num="29" count="1" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
-        <line num="53" count="2" type="stmt"/>
-      </file>
-    </package>
-    <package name="Stargazers_viewer.sharedLogic">
-      <metrics statements="13" coveredstatements="5" conditionals="7" coveredconditionals="2" methods="4" coveredmethods="1"/>
-      <file name="index.js" path="/home/forrest/Documents/code/Stargazers_viewer/sharedLogic/index.js">
-        <metrics statements="13" coveredstatements="5" conditionals="7" coveredconditionals="2" methods="4" coveredmethods="1"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="10" count="3" type="stmt"/>
-        <line num="11" count="1" type="cond" truecount="2" falsecount="2"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="17" count="0" type="cond" truecount="0" falsecount="3"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
       </file>
     </package>
   </project>

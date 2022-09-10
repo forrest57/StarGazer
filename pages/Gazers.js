@@ -20,6 +20,8 @@ const gearIcon = () => (
 )
 
 export default Gazers = ({ navigation, route }) => {
+
+  //required for list rendering
   const cardRenderer = ({ item }) => (
     <GazerCard login={item.login} avatar={item.avatar_url} />
   )
