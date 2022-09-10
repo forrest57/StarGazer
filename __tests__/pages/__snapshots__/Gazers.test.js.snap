@@ -52,7 +52,7 @@ exports[`<Home /> renders correctly 1`] = `
               "scale": 1,
             },
           ],
-          "width": "75%",
+          "width": "auto",
         }
       }
     >
@@ -73,18 +73,29 @@ exports[`<Home /> renders correctly 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#374151",
             "borderRadius": 6,
             "display": "flex",
-            "paddingBottom": 8,
-            "paddingLeft": 8,
-            "paddingRight": 8,
-            "paddingTop": 8,
-            "width": "100%",
           }
         }
       >
-        <Text />
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#374151",
+              "borderRadius": 6,
+              "display": "flex",
+              "justifyContent": "center",
+              "paddingBottom": 16,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+              "paddingTop": 16,
+              "width": "100%",
+            }
+          }
+        >
+          <Text />
+        </View>
       </View>
     </View>
     <Text
@@ -108,7 +119,7 @@ exports[`<Home /> renders correctly 1`] = `
               "scale": 1,
             },
           ],
-          "width": "75%",
+          "width": "auto",
         }
       }
     >
@@ -129,18 +140,29 @@ exports[`<Home /> renders correctly 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#374151",
             "borderRadius": 6,
             "display": "flex",
-            "paddingBottom": 8,
-            "paddingLeft": 8,
-            "paddingRight": 8,
-            "paddingTop": 8,
-            "width": "100%",
           }
         }
       >
-        <Text />
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#374151",
+              "borderRadius": 6,
+              "display": "flex",
+              "justifyContent": "center",
+              "paddingBottom": 16,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+              "paddingTop": 16,
+              "width": "100%",
+            }
+          }
+        >
+          <Text />
+        </View>
       </View>
     </View>
   </View>

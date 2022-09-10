@@ -1,14 +1,24 @@
 import HomeScreen from './pages/Home'
 import Gazers from './pages/Gazers'
 // import Settings from './pages/Settings'
-import { NavigationContainer } from '@react-navigation/native'
+import {
+  NavigationContainer,
+  DefaultTheme,
+  DarkTheme,
+} from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-
+import tw from 'twrnc'
 const Stack = createNativeStackNavigator()
-
+const MyTheme = {
+  dark: true,
+  colors: {
+    primary: '#374151',
+    background: '#374151',
+  },
+}
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={DarkTheme}>
       <Stack.Navigator initialRouteName='Home'>
         <Stack.Screen
           name='Home'

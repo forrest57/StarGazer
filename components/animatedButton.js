@@ -1,6 +1,10 @@
-import { Text, Animated, Pressable, StyleSheet } from 'react-native'
+import { Text, Animated, Pressable } from 'react-native'
 import tw from 'twrnc'
-export default AnimatedButton = ({ Component, pressFunction, width }) => {
+export default AnimatedButton = ({
+  Component,
+  pressFunction,
+  width = 'auto',
+}) => {
   const animation = new Animated.Value(0)
   const inputRange = [0, 1]
   const outputRange = [1, 0.95]

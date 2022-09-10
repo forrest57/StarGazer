@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, View, SafeAreaView, FlatList, Text } from 'react-native'
+import { View, SafeAreaView, FlatList, Text } from 'react-native'
 import tw from 'twrnc'
 import { Ionicons } from '@expo/vector-icons'
 import { SimpleLineIcons } from '@expo/vector-icons'
@@ -23,6 +23,9 @@ export default Gazers = ({ navigation, route }) => {
   const cardRenderer = ({ item }) => (
     <GazerCard login={item.login} avatar={item.avatar_url} />
   )
+
+  const goHome = () => navigation.navigate('Home')
+
   return (
     <SafeAreaView
       style={[
@@ -34,15 +37,9 @@ export default Gazers = ({ navigation, route }) => {
           tw`flex flex-row items-center p-1 w-full  px-5 mb-3 rounded-md`,
           { justifyContent: 'space-between' },
         ]}>
-        {/* <AnimatedButton text='srata' /> */}
-        {/* <Pressable
-          style={tw`bg-gray-700 flex items-center justify-center rounded-md py-2 w-1/6 `}> */}
-        <AnimatedButton Component={chevronLeftIcon} />
-        {/* </Pressable> */}
+        <AnimatedButton Component={chevronLeftIcon} pressFunction={goHome} />
         <Text style={{ fontSize: 28, color: 'gray' }}>{route.params.repo}</Text>
-        {/* <Pressable */}
         <AnimatedButton Component={gearIcon} />
-        {/* </Pressable> */}
       </View>
       <FlatList
         style={tw`w-full px-5`}
@@ -55,20 +52,3 @@ export default Gazers = ({ navigation, route }) => {
   )
 }
 
-const styles = StyleSheet.create({
-  TextInput: {
-    fontSize: 28,
-    color: 'white',
-  },
-  title: {
-    fontSize: 46,
-    color: 'gray',
-    fontWeight: 'bold',
-    fontStyle: 'italic',
-  },
-  buttonText: {
-    fontSize: 36,
-    color: 'gray',
-    fontWeight: 'bold',
-  },
-})

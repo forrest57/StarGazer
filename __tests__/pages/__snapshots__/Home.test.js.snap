@@ -116,7 +116,7 @@ exports[`<Home /> renders correctly 1`] = `
             "scale": 1,
           },
         ],
-        "width": "75%",
+        "width": "100%",
       }
     }
   >
@@ -137,28 +137,39 @@ exports[`<Home /> renders correctly 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#374151",
           "borderRadius": 6,
           "display": "flex",
-          "paddingBottom": 8,
-          "paddingLeft": 8,
-          "paddingRight": 8,
-          "paddingTop": 8,
-          "width": "100%",
         }
       }
     >
-      <Text
+      <View
         style={
           Object {
-            "color": "gray",
-            "fontSize": 32,
-            "fontWeight": "bold",
+            "alignItems": "center",
+            "backgroundColor": "#374151",
+            "borderRadius": 6,
+            "display": "flex",
+            "justifyContent": "center",
+            "paddingBottom": 16,
+            "paddingLeft": 16,
+            "paddingRight": 16,
+            "paddingTop": 16,
+            "width": "75%",
           }
         }
       >
-        Check Gazers
-      </Text>
+        <Text
+          style={
+            Object {
+              "color": "gray",
+              "fontSize": 32,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Check Gazers
+        </Text>
+      </View>
     </View>
   </View>
   <View
@@ -172,7 +183,7 @@ exports[`<Home /> renders correctly 1`] = `
             "scale": 1,
           },
         ],
-        "width": "75%",
+        "width": "100%",
       }
     }
   >
@@ -193,28 +204,39 @@ exports[`<Home /> renders correctly 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#374151",
           "borderRadius": 6,
           "display": "flex",
-          "paddingBottom": 8,
-          "paddingLeft": 8,
-          "paddingRight": 8,
-          "paddingTop": 8,
-          "width": "100%",
         }
       }
     >
-      <Text
+      <View
         style={
           Object {
-            "color": "gray",
-            "fontSize": 32,
-            "fontWeight": "bold",
+            "alignItems": "center",
+            "backgroundColor": "#374151",
+            "borderRadius": 6,
+            "display": "flex",
+            "justifyContent": "center",
+            "paddingBottom": 16,
+            "paddingLeft": 16,
+            "paddingRight": 16,
+            "paddingTop": 16,
+            "width": "75%",
           }
         }
       >
-        Recent repos
-      </Text>
+        <Text
+          style={
+            Object {
+              "color": "gray",
+              "fontSize": 32,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Recent repos
+        </Text>
+      </View>
     </View>
   </View>
 </RCTSafeAreaView>
