@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1662807828302" clover="3.2.0">
+  <project timestamp="1662807828302" name="All files">
+    <metrics statements="22" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="10" coveredmethods="3" elements="34" coveredelements="21" complexity="0" loc="22" ncloc="22" packages="3" files="6" classes="6"/>
+    <package name="Stargazers_viewer">
+      <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="App.js" path="/home/forrest/Documents/code/Stargazers_viewer/App.js">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="Stargazers_viewer.components">
+      <metrics statements="13" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="2"/>
+      <file name="animatedButton.js" path="/home/forrest/Documents/code/Stargazers_viewer/components/animatedButton.js">
+        <metrics statements="12" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="34" count="4" type="stmt"/>
+        <line num="47" count="3" type="stmt"/>
+      </file>
+      <file name="gazerCard.js" path="/home/forrest/Documents/code/Stargazers_viewer/components/gazerCard.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="Stargazers_viewer.pages">
+      <metrics statements="7" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="1"/>
+      <file name="Gazers.js" path="/home/forrest/Documents/code/Stargazers_viewer/pages/Gazers.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="Home.js" path="/home/forrest/Documents/code/Stargazers_viewer/pages/Home.js">
+        <metrics statements="7" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="1"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="84" count="2" type="stmt"/>
+      </file>
+      <file name="Settings.js" path="/home/forrest/Documents/code/Stargazers_viewer/pages/Settings.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+  </project>
+</coverage>

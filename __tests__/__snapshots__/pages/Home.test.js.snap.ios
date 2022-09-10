@@ -1,0 +1,205 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Home /> renders correctly 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#1f2937",
+      "display": "flex",
+      "flexDirection": "column",
+      "height": "100%",
+      "justifyContent": "center",
+      "marginTop": 0,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "gray",
+        "fontSize": 46,
+        "fontStyle": "italic",
+        "fontWeight": "bold",
+      }
+    }
+  >
+    Stargazer
+  </Text>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "width": "75%",
+      }
+    }
+  >
+    <TextInput
+      autoFocus={true}
+      cursorColor="white"
+      onChangeText={[Function]}
+      placeholder="User"
+      placeholderTextColor="gray"
+      style={
+        Object {
+          "backgroundColor": "#374151",
+          "borderRadius": 6,
+          "color": "white",
+          "fontSize": 28,
+          "paddingBottom": 12,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "paddingTop": 12,
+          "width": "41.666667%",
+        }
+      }
+    />
+    <Text
+      style={
+        Object {
+          "color": "gray",
+          "fontSize": 46,
+          "width": "8.333333%",
+        }
+      }
+    >
+      /
+    </Text>
+    <TextInput
+      cursorColor="white"
+      onChangeText={[Function]}
+      placeholder="Repo"
+      placeholderTextColor="gray"
+      style={
+        Object {
+          "backgroundColor": "#374151",
+          "borderRadius": 6,
+          "color": "white",
+          "fontSize": 28,
+          "paddingBottom": 12,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "paddingTop": 12,
+          "width": "41.666667%",
+        }
+      }
+    />
+  </View>
+  <View
+    collapsable={false}
+    style={
+      Object {
+        "display": "flex",
+        "marginTop": 8,
+        "transform": Array [
+          Object {
+            "scale": 1,
+          },
+        ],
+        "width": "75%",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      activeOpacity={1}
+      collapsable={false}
+      focusable={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#374151",
+          "borderRadius": 6,
+          "display": "flex",
+          "paddingBottom": 8,
+          "paddingLeft": 8,
+          "paddingRight": 8,
+          "paddingTop": 8,
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "gray",
+            "fontSize": 32,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Look gazers up
+      </Text>
+    </View>
+  </View>
+  <View
+    collapsable={false}
+    style={
+      Object {
+        "display": "flex",
+        "marginTop": 8,
+        "transform": Array [
+          Object {
+            "scale": 1,
+          },
+        ],
+        "width": "75%",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      activeOpacity={1}
+      collapsable={false}
+      focusable={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#374151",
+          "borderRadius": 6,
+          "display": "flex",
+          "paddingBottom": 8,
+          "paddingLeft": 8,
+          "paddingRight": 8,
+          "paddingTop": 8,
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "gray",
+            "fontSize": 32,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Recent repos
+      </Text>
+    </View>
+  </View>
+</RCTSafeAreaView>
+`;
