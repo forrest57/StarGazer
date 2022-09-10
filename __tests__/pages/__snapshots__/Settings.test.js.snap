@@ -1,0 +1,200 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Settings /> renders correctly 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Array [
+      Object {
+        "marginTop": 0,
+      },
+      Object {
+        "backgroundColor": "#1f2937",
+        "display": "flex",
+        "flexDirection": "column",
+        "height": "100%",
+        "paddingTop": 28,
+        "width": "100%",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginLeft": 16,
+        "width": "60%",
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        Object {
+          "display": "flex",
+          "marginTop": 8,
+          "transform": Array [
+            Object {
+              "scale": 1,
+            },
+          ],
+          "width": "auto",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        activeOpacity={1}
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "borderRadius": 6,
+            "display": "flex",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#374151",
+              "borderRadius": 6,
+              "display": "flex",
+              "justifyContent": "center",
+              "paddingBottom": 16,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+              "paddingTop": 16,
+              "width": "100%",
+            }
+          }
+        >
+          <Text />
+        </View>
+      </View>
+    </View>
+    <Text
+      style={
+        Object {
+          "color": "gray",
+          "fontSize": 28,
+          "marginLeft": 8,
+        }
+      }
+    >
+      Options
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": "100%",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#374151",
+          "borderRadius": 6,
+          "display": "flex",
+          "flexDirection": "row",
+          "height": 40,
+          "justifyContent": "center",
+          "marginBottom": 12,
+          "paddingBottom": 4,
+          "paddingLeft": 20,
+          "paddingRight": 20,
+          "paddingTop": 4,
+          "width": "75%",
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      style={
+        Object {
+          "display": "flex",
+          "marginTop": 8,
+          "transform": Array [
+            Object {
+              "scale": 1,
+            },
+          ],
+          "width": "100%",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        activeOpacity={1}
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "borderRadius": 6,
+            "display": "flex",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#374151",
+              "borderRadius": 6,
+              "display": "flex",
+              "justifyContent": "center",
+              "paddingBottom": 16,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+              "paddingTop": 16,
+              "width": "75%",
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "gray",
+                "fontSize": 28,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Reset app data
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTSafeAreaView>
+`;

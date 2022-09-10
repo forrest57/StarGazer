@@ -8,6 +8,7 @@ import {
 } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import tw from 'twrnc'
+import Settings from './pages/Settings'
 const Stack = createNativeStackNavigator()
 const MyTheme = {
   dark: true,
@@ -30,6 +31,13 @@ export default function App() {
         <Stack.Screen
           name='Gazers'
           component={Gazers}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name='Settings'
+          component={Settings}
           options={{
             headerShown: false,
           }}

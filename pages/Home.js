@@ -35,7 +35,7 @@ export default Home = ({ navigation }) => {
   const goToRecent = () => !isLoading && navigation.navigate('recent')
 
   //made for button animation reusability
-  const CheckButtonText = () => (
+  const SearchButtonText = () => (
     <View
       style={tw` bg-gray-700 flex items-center justify-center rounded-md p-4 w-3/4`}>
       <Text style={styles.buttonText}>Check Gazers</Text>
@@ -75,7 +75,7 @@ export default Home = ({ navigation }) => {
       </View>
       <AnimatedButton
         width={'full'}
-        Component={CheckButtonText}
+        Component={SearchButtonText}
         pressFunction={goToGazers}
       />
       <AnimatedButton

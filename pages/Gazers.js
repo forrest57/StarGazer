@@ -25,6 +25,7 @@ export default Gazers = ({ navigation, route }) => {
   )
 
   const goHome = () => navigation.navigate('Home')
+  const goToSettings = () => navigation.navigate('Settings')
 
   return (
     <SafeAreaView
@@ -39,7 +40,7 @@ export default Gazers = ({ navigation, route }) => {
         ]}>
         <AnimatedButton Component={chevronLeftIcon} pressFunction={goHome} />
         <Text style={{ fontSize: 28, color: 'gray' }}>{route.params.repo}</Text>
-        <AnimatedButton Component={gearIcon} />
+        <AnimatedButton Component={gearIcon} pressFunction={goToSettings} />
       </View>
       <FlatList
         style={tw`w-full px-5`}
