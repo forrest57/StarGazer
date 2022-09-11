@@ -23,6 +23,7 @@ describe('<animatedButtton />', () => {
         />
       )
       .toJSON()
-    expect(buttonComponent.children[0].children[0].children[0]).toBe(prop)
+      const buttonText = buttonComponent.children[0].children[0].children[0]
+      expect(buttonText).toBe(prop)
   })
 })

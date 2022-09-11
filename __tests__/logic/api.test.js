@@ -24,14 +24,14 @@ describe.skip('Api Call', () => {
 describe('Data Validator', () => {
   it.skip('throws an alert-formatted error if the gitHub api throws', async () => {
     try {
-      const res = await validateRequest('notAValidOwner', 'loremipsum!$')
+      const _ = await validateRequest('notAValidOwner', 'loremipsum!$')
     } catch (e) {
       expect(e[0]).toEqual('error')
     }
   })
   it('throws an alert-formatted error if the provided data is null', async () => {
     try {
-      const res = await validateRequest('', '')
+      const _ = await validateRequest('', '')
     } catch (e) {
       expect(e).toEqual(['error', 'empty search fields, add data first'])
     }

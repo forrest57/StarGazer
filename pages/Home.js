@@ -70,6 +70,7 @@ import {
 
           <View style={tw`flex flex-row w-3/4 items-center justify-between`}>
             <TextInput
+              testID='textInput'
               autoFocus={true}
               cursorColor='white'
               style={[
@@ -84,6 +85,7 @@ import {
               /
             </Text>
             <TextInput
+              testID='textInput'
               cursorColor='white'
               style={[
                 tw` w-5/12 p-3 bg-gray-700  rounded-md`,

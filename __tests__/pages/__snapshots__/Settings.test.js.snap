@@ -97,7 +97,7 @@ exports[`<Settings /> renders correctly 1`] = `
         }
       }
     >
-      Options
+      Settings
     </Text>
   </View>
   <View
@@ -109,25 +109,6 @@ exports[`<Settings /> renders correctly 1`] = `
       }
     }
   >
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#374151",
-          "borderRadius": 6,
-          "display": "flex",
-          "flexDirection": "row",
-          "height": 40,
-          "justifyContent": "center",
-          "marginBottom": 12,
-          "paddingBottom": 4,
-          "paddingLeft": 20,
-          "paddingRight": 20,
-          "paddingTop": 4,
-          "width": "75%",
-        }
-      }
-    />
     <View
       collapsable={false}
       style={
