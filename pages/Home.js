@@ -1,22 +1,23 @@
-import { StatusBar } from 'expo-status-bar'
-import { useState } from 'react'
 import {
+  Alert,
+  SafeAreaView,
   StyleSheet,
   Text,
-  View,
-  SafeAreaView,
   TextInput,
-  Alert,
+  View,
 } from 'react-native'
-import tw from 'twrnc'
-import AnimatedButton from '../components/animatedButton'
-import { validateRequest } from '../sharedLogic/apiManager'
 import {
-  getRepoHistory,
   appendRepoToHistory,
+  getRepoHistory,
 } from '../sharedLogic/asyncStorageManager'
 
-    const SearchButtonText = () => (
+import AnimatedButton from '../components/AnimatedButton'
+import { StatusBar } from 'expo-status-bar'
+import tw from 'twrnc'
+import { useState } from 'react'
+import { validateRequest } from '../sharedLogic/apiManager'
+
+const SearchButtonText = () => (
       <View
         style={tw` mt-3 bg-gray-700 flex items-center justify-center rounded-md p-4 w-3/4`}>
         <Text style={styles.buttonText}>Check Gazers</Text>

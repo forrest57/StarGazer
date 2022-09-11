@@ -1,17 +1,17 @@
+import GazerCard from '../../components/GazerCard'
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-// import App from '../App'
-import GazerCard from '../../components/gazerCard'
-
+const prop = 'lorem'
+const imgUri = 'https://placekitten.com/200/300'
 describe('<gazerCard />', () => {
   it('renders at all', () => {
-    const tree = renderer.create(<GazerCard text='lorem' />).toJSON()
+    const tree = renderer
+      .create(<GazerCard login={prop} avatar={imgUri} />)
+      .toJSON()
     expect(tree).toMatchSnapshot()
   })
   it('renders passed props', () => {
-    const prop = 'lorem'
-    const imgUri = 'https://placekitten.com/200/300'
     const gazerComponent = renderer
       .create(<GazerCard login={prop} avatar={imgUri} />)
       .toJSON()

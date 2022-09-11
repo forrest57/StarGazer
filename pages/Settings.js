@@ -1,9 +1,10 @@
+import { Alert, SafeAreaView, StyleSheet, Text, View } from 'react-native'
+
+import AnimatedButton from '../components/AnimatedButton'
+import NavBar from '../components/NavBar'
 import { StatusBar } from 'expo-status-bar'
-import { View, SafeAreaView, Text, StyleSheet, Alert } from 'react-native'
-import tw from 'twrnc'
-import AnimatedButton from '../components/animatedButton'
 import { clearRepoHistory } from '../sharedLogic/asyncStorageManager'
-import NavBar from '../components/navBar'
+import tw from 'twrnc'
 
 const ResetButtonText = () => (
   <View

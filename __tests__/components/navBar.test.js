@@ -1,9 +1,8 @@
+import { render, screen } from '@testing-library/react-native'
+
+import NavBar from '../../components/NavBar'
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { render, screen } from '@testing-library/react-native'
-import NavBar from '../../components/navBar'
-
-
 
 describe('<Navbar/>', () => {
   it('renders correctly', () => {

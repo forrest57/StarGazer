@@ -1,17 +1,12 @@
+import { Alert, FlatList, SafeAreaView, StyleSheet } from 'react-native'
+
+import AnimatedButton from '../components/AnimatedButton'
+import NavBar from '../components/NavBar'
+import RecentsCard from '../components/RecentsCard'
 import { StatusBar } from 'expo-status-bar'
-import { useState } from 'react'
-import {
-  FlatList,
-  View,
-  Text,
-  SafeAreaView,
-  StyleSheet,
-  Alert,
-} from 'react-native'
-import tw from 'twrnc'
-import AnimatedButton from '../components/animatedButton'
-import NavBar from '../components/navBar'
 import { getGazers } from '../sharedLogic/apiManager'
+import tw from 'twrnc'
+import { useState } from 'react'
 
 //necessary for passing a propped component to AnimatedButton
 
@@ -35,18 +30,12 @@ export default RecentsPage = ({ navigation, route }) => {
   }
 
   const cardRenderer = ({ item }) => {
-    console.log(item)
     const onClick = () => !isLoading && redirectToGazers(item)
-    const CustomText = <CardComponent text={item} />
+    console.log(item)
+    const CustomText = <RecentsCard text={item} />
     return <AnimatedButton Component={CustomText} pressFunction={onClick} />
   }
 
-  const CardComponent = ({ text }) => (
-    <View
-      style={tw`bg-gray-700 p-4 my-2 rounded-md flex w-full  justify-center flex-row`}>
-      <Text style={styles.buttonText}>{text}</Text>
-    </View>
-  )
   return (
     <SafeAreaView
       style={[
@@ -64,11 +53,3 @@ export default RecentsPage = ({ navigation, route }) => {
     </SafeAreaView>
   )
 }
-
-const styles = StyleSheet.create({
-  buttonText: {
-    color: 'gray',
-    fontSize: 28,
-    fontWeight: 'bold',
-  },
-})

@@ -1,5 +1,6 @@
-import { View, Text, StyleSheet } from 'react-native'
-import AnimatedButton from '../components/animatedButton'
+import { StyleSheet, Text, View } from 'react-native'
+
+import AnimatedButton from './AnimatedButton'
 import { Ionicons } from '@expo/vector-icons'
 import { SimpleLineIcons } from '@expo/vector-icons'
 import tw from 'twrnc'

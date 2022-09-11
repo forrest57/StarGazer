@@ -1,7 +1,7 @@
+import AnimatedButton from '../../components/AnimatedButton'
 import React from 'react'
 import { Text } from 'react-native'
 import renderer from 'react-test-renderer'
-import AnimatedButton from '../../components/animatedButton'
 
 const prop = 'lorem'
 const textComponent = () => <Text>{prop}</Text>
