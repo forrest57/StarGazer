@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1662913616945" clover="3.2.0">
-  <project timestamp="1662913616945" name="All files">
-    <metrics statements="114" coveredstatements="101" conditionals="29" coveredconditionals="25" methods="37" coveredmethods="31" elements="180" coveredelements="157" complexity="0" loc="114" ncloc="114" packages="4" files="10" classes="10"/>
+<coverage generated="1662914930867" clover="3.2.0">
+  <project timestamp="1662914930867" name="All files">
+    <metrics statements="113" coveredstatements="105" conditionals="29" coveredconditionals="28" methods="35" coveredmethods="30" elements="177" coveredelements="163" complexity="0" loc="113" ncloc="113" packages="4" files="10" classes="10"/>
     <package name="Stargazers_viewer">
       <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="App.js" path="/home/forrest/Documents/code/Stargazers_viewer/App.js">
@@ -108,25 +108,24 @@
       </file>
     </package>
     <package name="Stargazers_viewer.sharedLogic">
-      <metrics statements="42" coveredstatements="33" conditionals="11" coveredconditionals="8" methods="7" coveredmethods="6"/>
+      <metrics statements="41" coveredstatements="37" conditionals="11" coveredconditionals="11" methods="5" coveredmethods="5"/>
       <file name="apiManager.js" path="/home/forrest/Documents/code/Stargazers_viewer/sharedLogic/apiManager.js">
-        <metrics statements="16" coveredstatements="11" conditionals="7" coveredconditionals="4" methods="4" coveredmethods="3"/>
+        <metrics statements="15" coveredstatements="15" conditionals="7" coveredconditionals="7" methods="2" coveredmethods="2"/>
         <line num="4" count="3" type="stmt"/>
         <line num="6" count="3" type="stmt"/>
-        <line num="7" count="4" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
         <line num="11" count="3" type="stmt"/>
-        <line num="12" count="3" type="cond" truecount="4" falsecount="0"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
-        <line num="16" count="2" type="stmt"/>
-        <line num="17" count="2" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="cond" truecount="0" falsecount="3"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
+        <line num="12" count="5" type="cond" truecount="4" falsecount="0"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="18" count="3" type="cond" truecount="3" falsecount="0"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
       </file>
       <file name="asyncStorageManager.js" path="/home/forrest/Documents/code/Stargazers_viewer/sharedLogic/asyncStorageManager.js">
         <metrics statements="26" coveredstatements="22" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>

@@ -11,6 +11,7 @@ jest.mock('../../sharedLogic/asyncStorageManager.js', () => ({
 afterEach(jest.resetAllMocks)
 class CustomStatusError extends Error {
   constructor(status) {
+    super()
     return { response: { status: status } }
   }
 }
@@ -42,11 +43,32 @@ describe('Data Validator', () => {
     )
   })
 
-  const myError = new CustomStatusError(403)
-  axios.get.mockRejectedValueOnce(myError)
-  it('throws an alert-formatted error if the gitHub api throws', async () => {
+  it('throws an alert-formatted error if the gitHub api throws 403', async () => {
+    const myError = new CustomStatusError(403)
+    axios.get.mockRejectedValueOnce(myError)
     try {
-      const _ = await validateRequest('vuejs', 'vue')
+      const res = await validateRequest('vuejs', 'vue')
+      fail(`API has not thrown, data= ${res}`)
+    } catch (e) {
+      expect(e[0]).toBe('error')
+    }
+  })
+  it('throws an alert-formatted error if the gitHub api throws 404', async () => {
+    const myError = new CustomStatusError(404)
+    axios.get.mockRejectedValueOnce(myError)
+    try {
+      const res = await validateRequest('vuejs', 'vue')
+      fail(`API has not thrown, data= ${res}`)
+    } catch (e) {
+      expect(e[0]).toBe('error')
+    }
+  })
+  it('throws an alert-formatted error if the gitHub api throws some other error', async () => {
+    const myError = new CustomStatusError(418)
+    axios.get.mockRejectedValueOnce(myError)
+    try {
+      const res = await validateRequest('vuejs', 'vue')
+      fail(`API has not thrown, data= ${res}`)
     } catch (e) {
       expect(e[0]).toBe('error')
     }
@@ -54,6 +76,7 @@ describe('Data Validator', () => {
   it('throws an alert-formatted error if the provided data is null', async () => {
     try {
       const _ = await validateRequest('', '')
+      fail('method has not thrown')
     } catch (e) {
       expect(e).toEqual(['error', 'empty search fields, add data first'])
     }
