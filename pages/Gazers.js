@@ -19,12 +19,12 @@ const gearIcon = () => (
   </View>
 )
 
-export default Gazers = ({ navigation, route }) => {
+const cardRenderer = ({ item }) => (
+  <GazerCard login={item.login} avatar={item.avatar_url} />
+)
 
+export default Gazers = ({ navigation, route }) => {
   //required for list rendering
-  const cardRenderer = ({ item }) => (
-    <GazerCard login={item.login} avatar={item.avatar_url} />
-  )
 
   const goHome = () => navigation.navigate('Home')
   const goToSettings = () => navigation.navigate('Settings')

@@ -1,4 +1,4 @@
-import { Text, Animated, Pressable } from 'react-native'
+import { Animated, Pressable } from 'react-native'
 import tw from 'twrnc'
 export default AnimatedButton = ({
   Component,
