@@ -14,7 +14,6 @@ jest.mock('axios')
 class CustomStatusError extends Error {
   constructor(status) {
     return { response: { status: status } }
-    // this.response.status = status
   }
 }
 

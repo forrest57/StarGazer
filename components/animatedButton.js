@@ -37,8 +37,7 @@ export default AnimatedButton = ({
     pressFunction()
   }
   return (
-    <Animated.View
-      style={[{ transform: [{ scale }] }, tw` mt-2 flex w-${width} `]}>
+    <Animated.View style={[{ transform: [{ scale }] }, tw` w-${width} `]}>
       <Pressable
         activeOpacity={1}
         onPressIn={onPressIn}

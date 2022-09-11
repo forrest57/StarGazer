@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Settings /> renders correctly 1`] = `
+exports[`<Recents /> renders correctly 1`] = `
 <RCTSafeAreaView
   emulateUnlessSupported={true}
   style={
@@ -104,26 +104,8 @@ exports[`<Settings /> renders correctly 1`] = `
       }
       testID="barText"
     >
-      Settings
+      Recent repos
     </Text>
-    <View
-      style={
-        Object {
-          "height": 59,
-          "width": 59,
-        }
-      }
-    />
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "height": "100%",
-        "justifyContent": "center",
-      }
-    }
-  >
     <View
       collapsable={false}
       style={
@@ -133,7 +115,7 @@ exports[`<Settings /> renders correctly 1`] = `
               "scale": 1,
             },
           ],
-          "width": "100%",
+          "width": "auto",
         }
       }
     >
@@ -171,21 +153,12 @@ exports[`<Settings /> renders correctly 1`] = `
               "paddingLeft": 16,
               "paddingRight": 16,
               "paddingTop": 16,
-              "width": "75%",
+              "width": "100%",
             }
           }
+          testID="GearButton"
         >
-          <Text
-            style={
-              Object {
-                "color": "gray",
-                "fontSize": 28,
-                "fontWeight": "bold",
-              }
-            }
-          >
-            Reset app data
-          </Text>
+          <Text />
         </View>
       </View>
     </View>

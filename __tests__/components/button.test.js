@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, TextComponent } from 'react-native'
+import { Text } from 'react-native'
 import renderer from 'react-test-renderer'
 import AnimatedButton from '../../components/animatedButton'
 

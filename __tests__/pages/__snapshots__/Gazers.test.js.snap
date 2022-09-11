@@ -28,15 +28,14 @@ exports[`<Home /> renders correctly 1`] = `
           "borderRadius": 6,
           "display": "flex",
           "flexDirection": "row",
+          "justifyContent": "space-between",
           "marginBottom": 12,
           "paddingBottom": 4,
           "paddingLeft": 20,
           "paddingRight": 20,
           "paddingTop": 4,
+          "textAlign": "center",
           "width": "100%",
-        },
-        Object {
-          "justifyContent": "space-between",
         },
       ]
     }
@@ -45,8 +44,6 @@ exports[`<Home /> renders correctly 1`] = `
       collapsable={false}
       style={
         Object {
-          "display": "flex",
-          "marginTop": 8,
           "transform": Array [
             Object {
               "scale": 1,
@@ -93,6 +90,7 @@ exports[`<Home /> renders correctly 1`] = `
               "width": "100%",
             }
           }
+          testID="BackButton"
         >
           <Text />
         </View>
@@ -102,9 +100,10 @@ exports[`<Home /> renders correctly 1`] = `
       style={
         Object {
           "color": "gray",
-          "fontSize": 28,
+          "fontSize": 20,
         }
       }
+      testID="barText"
     >
       loremIpsum
     </Text>
@@ -112,8 +111,6 @@ exports[`<Home /> renders correctly 1`] = `
       collapsable={false}
       style={
         Object {
-          "display": "flex",
-          "marginTop": 8,
           "transform": Array [
             Object {
               "scale": 1,
@@ -160,6 +157,7 @@ exports[`<Home /> renders correctly 1`] = `
               "width": "100%",
             }
           }
+          testID="GearButton"
         >
           <Text />
         </View>

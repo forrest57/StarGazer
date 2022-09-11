@@ -111,8 +111,6 @@ exports[`<Home /> renders correctly 1`] = `
     collapsable={false}
     style={
       Object {
-        "display": "flex",
-        "marginTop": 8,
         "transform": Array [
           Object {
             "scale": 1,
@@ -152,6 +150,7 @@ exports[`<Home /> renders correctly 1`] = `
             "borderRadius": 6,
             "display": "flex",
             "justifyContent": "center",
+            "marginTop": 12,
             "paddingBottom": 16,
             "paddingLeft": 16,
             "paddingRight": 16,
@@ -178,8 +177,6 @@ exports[`<Home /> renders correctly 1`] = `
     collapsable={false}
     style={
       Object {
-        "display": "flex",
-        "marginTop": 8,
         "transform": Array [
           Object {
             "scale": 1,
@@ -219,6 +216,7 @@ exports[`<Home /> renders correctly 1`] = `
             "borderRadius": 6,
             "display": "flex",
             "justifyContent": "center",
+            "marginTop": 12,
             "paddingBottom": 16,
             "paddingLeft": 16,
             "paddingRight": 16,

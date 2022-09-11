@@ -4,6 +4,7 @@ import Gazers from './pages/Gazers'
 import { NavigationContainer, DarkTheme } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import Settings from './pages/Settings'
+import Recents from './pages/Recents'
 const Stack = createNativeStackNavigator()
 
 export default function App() {
@@ -27,6 +28,13 @@ export default function App() {
         <Stack.Screen
           name='Settings'
           component={Settings}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name='Recent'
+          component={Recents}
           options={{
             headerShown: false,
           }}

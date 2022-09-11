@@ -5,8 +5,6 @@ exports[`<animatedButtton /> renders correctly 1`] = `
   collapsable={false}
   style={
     Object {
-      "display": "flex",
-      "marginTop": 8,
       "transform": Array [
         Object {
           "scale": 1,

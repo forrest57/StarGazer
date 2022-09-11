@@ -18,13 +18,13 @@ import {
 
     const SearchButtonText = () => (
       <View
-        style={tw` bg-gray-700 flex items-center justify-center rounded-md p-4 w-3/4`}>
+        style={tw` mt-3 bg-gray-700 flex items-center justify-center rounded-md p-4 w-3/4`}>
         <Text style={styles.buttonText}>Check Gazers</Text>
       </View>
     )
     const RecentButtonText = () => (
       <View
-        style={tw` bg-gray-700 flex items-center justify-center rounded-md p-4 w-3/4`}>
+        style={tw`mt-3 bg-gray-700 flex items-center justify-center rounded-md p-4 w-3/4`}>
         <Text style={styles.buttonText}>Recent repos</Text>
       </View>
     )
@@ -34,12 +34,12 @@ import {
       const [user, setUser] = useState('')
       const [isLoading, setIsLoading] = useState(false)
 
-      const validateAndRedirect = async () => {
+      const validateAndRedirectToGazers = async () => {
         const routeName = `${user}/${repo}`
         setIsLoading(true)
         try {
           const res = await validateRequest(user, repo)
-         await appendRepoToHistory(routeName)
+          await appendRepoToHistory(routeName)
           setIsLoading(false)
           navigation.navigate('Gazers', { data: res.data, repo: routeName })
         } catch (errorMsg) {
@@ -49,15 +49,21 @@ import {
       }
 
       //TESTING FUNCTION
-      const logRecent = async () => {
+      const navigateToRecent = async () => {
         const res = await getRepoHistory()
-        console.log('repo history:', res)
+        if (res.length) {
+          navigation.navigate('Recent', { repos: res })
+        } else {
+          Alert.alert(
+            'No recent repos',
+            "Look some repos up and they'll be added to your history."
+          )
+        }
       }
 
-      const goToGazers = async () => !isLoading && (await validateAndRedirect())
-      const goToRecent = () => !isLoading && navigation.navigate('recent')
-
-      //made for AnimatedButton reusability
+      const goToGazers = async () =>
+        !isLoading && (await validateAndRedirectToGazers())
+      const goToRecent = async () => !isLoading && (await navigateToRecent())
 
       return (
         <SafeAreaView
@@ -104,7 +110,7 @@ import {
           <AnimatedButton
             width={'full'}
             Component={RecentButtonText}
-            pressFunction={logRecent}
+            pressFunction={goToRecent}
           />
 
           <StatusBar style='light' />
