@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar'
 import { View, SafeAreaView, Text, StyleSheet, Alert } from 'react-native'
 import tw from 'twrnc'
 import AnimatedButton from '../components/animatedButton'
-import { clearRepoHistory } from '../sharedLogic'
+import { clearRepoHistory } from '../sharedLogic/asyncStorageManager'
 import NavBar from '../components/navBar'
 
 const ResetButtonText = () => (

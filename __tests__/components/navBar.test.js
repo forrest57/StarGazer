@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer'
 import { render, screen } from '@testing-library/react-native'
 import NavBar from '../../components/navBar'
 
-jest.mock('../../sharedLogic', () => ({ validateRequest: jest.fn() }))
+
 
 describe('<Navbar/>', () => {
   it('renders correctly', () => {

@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for Stargazers_viewer/sharedLogic/index.js</title>
+    <title>Code coverage report for Stargazers_viewer/sharedLogic/apiManager.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">Stargazers_viewer/sharedLogic</a> index.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">Stargazers_viewer/sharedLogic</a> apiManager.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20% </span>
+                <span class="strong">68.75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/15</span>
+                <span class='fraction'>11/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">57.14% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>4/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20% </span>
+                <span class="strong">68.75% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/15</span>
+                <span class='fraction'>11/16</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -95,22 +95,24 @@
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -124,7 +126,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import axios from 'axios'
@@ -132,17 +134,18 @@ import { appendRepoToHistory } from './asyncStorageManager'
 &nbsp;
 const baseUrl = 'https://api.github.com/repos'
 &nbsp;
-export const getGazers = <span class="fstat-no" title="function not covered" >as</span>ync (user, repo) =&gt; {
-  const res = <span class="cstat-no" title="statement not covered" >await axios.get(`${baseUrl}/${user}/${repo}/stargazers`)</span>
-<span class="cstat-no" title="statement not covered" >  return res</span>
+export const getGazers = async (user, repo) =&gt; {
+  const res = await axios.get(`${baseUrl}/${user}/${repo}/stargazers`)
+  return res
 }
 &nbsp;
-export const validateRequest = <span class="fstat-no" title="function not covered" >(u</span>ser, repo) =&gt; {
-<span class="cstat-no" title="statement not covered" >  if (user &amp;&amp; repo) {</span>
-<span class="cstat-no" title="statement not covered" >    return getGazers(user, repo)</span>
-      .then(<span class="fstat-no" title="function not covered" >(r</span>es) =&gt; {
-<span class="cstat-no" title="statement not covered" >        appendRepoToHistory()</span>
-<span class="cstat-no" title="statement not covered" >        return res</span>
+export const validateRequest = (user, repo) =&gt; {
+  if (user &amp;&amp; repo) {
+    return getGazers(user, repo)
+      .then(async (res) =&gt; {
+        console.log(res)
+        await appendRepoToHistory(`${user}/${repo}`)
+        return res
       })
       .catch(<span class="fstat-no" title="function not covered" >(e</span>rr) =&gt; {
 <span class="cstat-no" title="statement not covered" >        console.log(err)</span>
@@ -156,7 +159,7 @@ export const validateRequest = <span class="fstat-no" title="function not covere
         }
       })
   } else {
-<span class="cstat-no" title="statement not covered" >    throw ['error', 'empty search fields, add data first']</span>
+    throw ['error', 'empty search fields, add data first']
   }
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -166,7 +169,7 @@ export const validateRequest = <span class="fstat-no" title="function not covere
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-09-11T14:58:39.342Z
+                at 2022-09-11T16:26:56.935Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

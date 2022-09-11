@@ -163,5 +163,182 @@ exports[`<Recents /> renders correctly 1`] = `
       </View>
     </View>
   </View>
+  <RCTScrollView
+    data={
+      Array [
+        "lorem/Ipsum",
+        "Ipsum/lorem",
+      ]
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    style={
+      Object {
+        "paddingLeft": 20,
+        "paddingRight": 20,
+        "width": "100%",
+      }
+    }
+    viewabilityConfigCallbackPairs={Array []}
+  >
+    <View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          collapsable={false}
+          style={
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": 1,
+                },
+              ],
+              "width": "auto",
+            }
+          }
+        >
+          <View
+            accessible={true}
+            activeOpacity={1}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "borderRadius": 6,
+                "display": "flex",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#374151",
+                  "borderRadius": 6,
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "marginBottom": 8,
+                  "marginTop": 8,
+                  "paddingBottom": 16,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                  "paddingTop": 16,
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "gray",
+                    "fontSize": 28,
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                lorem/Ipsum
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          collapsable={false}
+          style={
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": 1,
+                },
+              ],
+              "width": "auto",
+            }
+          }
+        >
+          <View
+            accessible={true}
+            activeOpacity={1}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "borderRadius": 6,
+                "display": "flex",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#374151",
+                  "borderRadius": 6,
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "marginBottom": 8,
+                  "marginTop": 8,
+                  "paddingBottom": 16,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                  "paddingTop": 16,
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "gray",
+                    "fontSize": 28,
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                Ipsum/lorem
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
 </RCTSafeAreaView>
 `;

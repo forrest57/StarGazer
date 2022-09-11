@@ -1,6 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-const { validateRequest, getRepoHistory } = require('../../sharedLogic/')
+const { validateRequest } = require('../../sharedLogic/apiManager')
+const { getRepoHistory } = require('../../sharedLogic/asyncStorageManager')
 import {
   render,
   screen,
@@ -10,11 +11,15 @@ import {
 import Home from '../../pages/Home'
 import { Alert } from 'react-native'
 
-jest.mock('../../sharedLogic', () => ({
+jest.mock('../../sharedLogic/apiManager.js', () => ({
   validateRequest: jest.fn(),
+}))
+jest.mock('../../sharedLogic/asyncStorageManager.js', () => ({
   getRepoHistory: jest.fn(),
 }))
-
+// jest.mock('../../sharedLogic/apiManager', () => ({
+//   validateRequest: jest.fn(),
+// }))
 jest.spyOn(Alert, 'alert')
 
 describe('<Home />', () => {

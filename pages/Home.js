@@ -10,11 +10,11 @@ import {
 } from 'react-native'
 import tw from 'twrnc'
 import AnimatedButton from '../components/animatedButton'
+import { validateRequest } from '../sharedLogic/apiManager'
 import {
   getRepoHistory,
   appendRepoToHistory,
-  validateRequest,
-} from '../sharedLogic'
+} from '../sharedLogic/asyncStorageManager'
 
     const SearchButtonText = () => (
       <View
@@ -39,7 +39,6 @@ import {
         setIsLoading(true)
         try {
           const res = await validateRequest(user, repo)
-          await appendRepoToHistory(routeName)
           setIsLoading(false)
           navigation.navigate('Gazers', { data: res.data, repo: routeName })
         } catch (errorMsg) {

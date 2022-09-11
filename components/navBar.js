@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar'
 import { View, Text, StyleSheet } from 'react-native'
 import AnimatedButton from '../components/animatedButton'
 import { Ionicons } from '@expo/vector-icons'
@@ -36,7 +35,6 @@ export default Navbar = ({ navigation, barText, isSettingsShown = true }) => {
       ) : (
         <View style={{ height: 59, width: 59 }}></View>
       )}
-      <StatusBar style='light' />
     </View>
   )
 }
