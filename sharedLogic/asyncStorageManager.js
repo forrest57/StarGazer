@@ -13,7 +13,6 @@ export const appendRepoToHistory = async (repoString) => {
       return false
     }
   } catch (e) {
-    console.log(e)
     return false //edge case, does not seem really testable
   }
 }

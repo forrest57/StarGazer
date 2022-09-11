@@ -47,7 +47,6 @@ import {
         }
       }
 
-      //TESTING FUNCTION
       const navigateToRecent = async () => {
         const res = await getRepoHistory()
         if (res.length) {
