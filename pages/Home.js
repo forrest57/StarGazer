@@ -39,8 +39,7 @@ import {
         setIsLoading(true)
         try {
           const res = await validateRequest(user, repo)
-          const isPushed = await appendRepoToHistory(routeName)
-          console.log('IsPushed:', isPushed)
+         await appendRepoToHistory(routeName)
           setIsLoading(false)
           navigation.navigate('Gazers', { data: res.data, repo: routeName })
         } catch (errorMsg) {
