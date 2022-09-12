@@ -10,6 +10,7 @@ export const getGazers = async (user, repo) => {
 
 export const loadNextPage = async (repoString, pageToLoad) => {
   try {
+    console.log(pageToLoad)
     const res = await axios.get(
       `${baseUrl}/${repoString}/stargazers?page=${pageToLoad}`
     )
