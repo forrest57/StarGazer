@@ -12,6 +12,8 @@ const cardRenderer = ({ item }) => (
   <GazerCard login={item.login} avatar={item.avatar_url} />
 )
 export default Gazers = ({ navigation, route }) => {
+  //THIS IS WHERE I WAS HAVING PROBLEMS:
+  //as currentPage gets instantiated, the useEffect runs, so it pushes to the repos the first page again.
   const [repos, setRepos] = useState({ data: route.params.data })
   const [currentPage, setCurrentPage] = useState({ value: 2 })
   const [isLoading, setIsLoading] = useState(false)
@@ -19,7 +21,6 @@ export default Gazers = ({ navigation, route }) => {
   const loadNew = async () => {
     setIsLoading(true)
     try {
-      console.log(currentPage.value)
       const res = await loadNextPage(route.params.repo, currentPage.value)
       if (res.data.length) {
         setRepos((oldRepos) => ({ data: [...oldRepos.data, ...res.data] }))

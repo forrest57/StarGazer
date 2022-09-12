@@ -3,6 +3,7 @@ import {
   fireEvent,
   render,
   screen,
+  waitFor,
   waitForElementToBeRemoved,
 } from '@testing-library/react-native'
 
@@ -18,8 +19,8 @@ const route = {
     repo: 'loremIpsum',
     data: [
       { id: 1, login: 'lorem', avatar_url: null },
-      { id: 2, login: 'lorem', avatar_url: null },
-      { id: 3, login: 'lorem', avatar_url: null },
+      { id: 2, login: 'lorem2', avatar_url: null },
+      { id: 3, login: 'lorem3', avatar_url: null },
     ],
   },
 }
@@ -39,7 +40,7 @@ jest.mock('../../sharedLogic/apiManager.js', () => ({
 const eventData = {
   nativeEvent: {
     contentOffset: {
-      y: -5000,
+      y: -500,
     },
     contentSize: {
       // Dimensions of the scrollable content
@@ -65,7 +66,7 @@ describe('<Gazers />', function () {
     const tree = renderer.create(<Gazers route={route} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
-  it('correctly renders prop', () => {
+  it('correctly renders repoName prop', () => {
     const tree = renderer.create(<Gazers route={route} />).toJSON()
     const fullRepoName = tree.children[0].children[1].children[0]
     expect(fullRepoName).toBe(route.params.repo)
@@ -80,14 +81,12 @@ describe('<Gazers />', function () {
     expect(() => screen.getByText('new')).toThrow() //not shown
     loadNextPage.mockResolvedValueOnce(moreItems)
     fireEvent.scroll(screen.getByTestId('List'), eventData)
-    await waitForElementToBeRemoved(
-      async () => await screen.findByText(/loading more.../i),
-      {
-        timeout: 3000,
-      }
-    )
     await waitFor(() => {
-      expect(getByText(/new/i)).toBeTruthy()
+      expect(screen.findByText('new')).toBeTruthy()
+    })
+    await waitFor(() => {
+      const isDouble = screen.findAllByText('new2')
+      expect(isDouble[1]).toBeFalsy()
     })
   })
 })

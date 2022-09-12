@@ -17,11 +17,9 @@ export default RecentsPage = ({ navigation, route }) => {
     setIsLoading(true)
     try {
       const res = await validateRequest(...splitted)
-      console.log('RES:', res)
       setIsLoading(false)
       navigation.navigate('Gazers', { data: res.data, repo: repoString })
     } catch (errorMsg) {
-      console.log('err:', errorMsg)
       setIsLoading(false)
       Alert.alert(...errorMsg)
     }

@@ -37,7 +37,6 @@ export default Home = ({ navigation }) => {
     setIsLoading(true)
     try {
       const res = await validateRequest(user, repo)
-      console.log(res)
       setIsLoading(false)
       navigation.navigate('Gazers', { data: res.data, repo: routeName })
     } catch (errorMsg) {
