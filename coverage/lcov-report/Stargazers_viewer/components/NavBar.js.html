@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">81.81% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/10</span>
+                <span class='fraction'>9/11</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/8</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
@@ -109,8 +109,7 @@
 <a name='L44'></a><a href='#L44'>44</a>
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L47'></a><a href='#L47'>47</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -118,9 +117,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -130,11 +128,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -152,6 +149,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -164,17 +162,14 @@ import { Ionicons } from '@expo/vector-icons'
 import { SimpleLineIcons } from '@expo/vector-icons'
 import tw from 'twrnc'
 &nbsp;
+const buttonStyle = tw` bg-gray-700 rounded-md p-4 w-full`
 const chevronLeftIcon = () =&gt; (
-  &lt;View
-    testID={'BackButton'}
-    style={tw` bg-gray-700 flex items-center justify-center rounded-md p-4 w-full`}&gt;
+  &lt;View testID={'BackButton'} style={buttonStyle}&gt;
     &lt;Ionicons name='chevron-back-sharp' size={25} color='gray' /&gt;
   &lt;/View&gt;
 )
 const gearIcon = () =&gt; (
-  &lt;View
-    testID={'GearButton'}
-    style={tw` bg-gray-700 flex items-center justify-center rounded-md p-4 w-full `}&gt;
+  &lt;View testID={'GearButton'} style={buttonStyle}&gt;
     &lt;SimpleLineIcons name='settings' size={25} color='gray' /&gt;
   &lt;/View&gt;
 )
@@ -184,7 +179,7 @@ export default Navbar = ({ navigation, barText, isSettingsShown = true }) =&gt; 
   return (
     &lt;View
       style={[
-        tw` flex justify-between flex-row items-center text-center p-1 w-full  px-5 mb-3 rounded-md`,
+        tw` flex justify-between flex-row items-center  p-1 w-full  px-5 mb-3 rounded-md`,
       ]}&gt;
       &lt;AnimatedButton Component={chevronLeftIcon} pressFunction={goBack} /&gt;
       &lt;Text testID='barText' style={styles.text}&gt;
@@ -193,7 +188,8 @@ export default Navbar = ({ navigation, barText, isSettingsShown = true }) =&gt; 
       {isSettingsShown ? (
         &lt;AnimatedButton Component={gearIcon} pressFunction={goToSettings} /&gt;
       ) : (
-        &lt;View style={{ height: 59, width: 59 }}&gt;&lt;/View&gt;
+        //required for the flex alignment, so that the spacing is even with or without the gearbutton
+        &lt;View style={styles.placeHolderView}&gt;&lt;/View&gt;
       )}
     &lt;/View&gt;
   )
@@ -203,6 +199,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'gray',
   },
+  placeHolderView: { height: 59, width: 59 },
 })
 &nbsp;</pre></td></tr></table></pre>
 
@@ -211,7 +208,7 @@ const styles = StyleSheet.create({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-09-11T21:31:37.075Z
+                at 2022-09-12T10:39:15.199Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

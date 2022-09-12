@@ -1,5 +1,5 @@
-import axios from 'axios'
 import { appendRepoToHistory } from './asyncStorageManager'
+import axios from 'axios'
 
 const baseUrl = 'https://api.github.com/repos'
 
@@ -9,7 +9,8 @@ export const getGazers = async (user, repo) => {
 }
 
 export const validateRequest = async (user, repo) => {
-  if (user && repo) {
+  const isDataProvided = user && repo
+  if (isDataProvided) {
     try {
       const res = await getGazers(user, repo)
       await appendRepoToHistory(`${user}/${repo}`)

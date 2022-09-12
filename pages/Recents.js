@@ -8,16 +8,12 @@ import { getGazers } from '../sharedLogic/apiManager'
 import tw from 'twrnc'
 import { useState } from 'react'
 
-//necessary for passing a propped component to AnimatedButton
-
 export default RecentsPage = ({ navigation, route }) => {
   const [isLoading, setIsLoading] = useState(false)
-  //this could be refactored to a reusable function by using global reactive state for loading.
-  //That said, I  feel that it would be taxing on the development time,
-  //compared to the cost of writing the same function twice in an app this small.
-  console.log(route.params.repos)
+  const repos = route.params.repos
+
   const redirectToGazers = async (repoString) => {
-    const splitted = repoString.toLowerCase().split('/')
+    const splitted = repoString.split('/')
     setIsLoading(true)
     try {
       const res = await getGazers(...splitted)
@@ -31,7 +27,6 @@ export default RecentsPage = ({ navigation, route }) => {
 
   const cardRenderer = ({ item }) => {
     const onClick = () => !isLoading && redirectToGazers(item)
-    console.log(item)
     const CustomText = <RecentsCard text={item} />
     return <AnimatedButton Component={CustomText} pressFunction={onClick} />
   }
@@ -45,7 +40,7 @@ export default RecentsPage = ({ navigation, route }) => {
       <NavBar navigation={navigation} barText={'Recent repos'} />
       <FlatList
         style={tw`w-full px-5`}
-        data={route.params.repos}
+        data={repos}
         renderItem={cardRenderer}
         keyExtractor={(item, index) => index.toString()}
       />

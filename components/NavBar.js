@@ -5,17 +5,14 @@ import { Ionicons } from '@expo/vector-icons'
 import { SimpleLineIcons } from '@expo/vector-icons'
 import tw from 'twrnc'
 
+const buttonStyle = tw` bg-gray-700 rounded-md p-4 w-full`
 const chevronLeftIcon = () => (
-  <View
-    testID={'BackButton'}
-    style={tw` bg-gray-700 flex items-center justify-center rounded-md p-4 w-full`}>
+  <View testID={'BackButton'} style={buttonStyle}>
     <Ionicons name='chevron-back-sharp' size={25} color='gray' />
   </View>
 )
 const gearIcon = () => (
-  <View
-    testID={'GearButton'}
-    style={tw` bg-gray-700 flex items-center justify-center rounded-md p-4 w-full `}>
+  <View testID={'GearButton'} style={buttonStyle}>
     <SimpleLineIcons name='settings' size={25} color='gray' />
   </View>
 )
@@ -25,7 +22,7 @@ export default Navbar = ({ navigation, barText, isSettingsShown = true }) => {
   return (
     <View
       style={[
-        tw` flex justify-between flex-row items-center text-center p-1 w-full  px-5 mb-3 rounded-md`,
+        tw` flex justify-between flex-row items-center  p-1 w-full  px-5 mb-3 rounded-md`,
       ]}>
       <AnimatedButton Component={chevronLeftIcon} pressFunction={goBack} />
       <Text testID='barText' style={styles.text}>
@@ -34,7 +31,8 @@ export default Navbar = ({ navigation, barText, isSettingsShown = true }) => {
       {isSettingsShown ? (
         <AnimatedButton Component={gearIcon} pressFunction={goToSettings} />
       ) : (
-        <View style={{ height: 59, width: 59 }}></View>
+        //required for the flex alignment, so that the spacing is even with or without the gearbutton
+        <View style={styles.placeHolderView}></View>
       )}
     </View>
   )
@@ -44,4 +42,5 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'gray',
   },
+  placeHolderView: { height: 59, width: 59 },
 })

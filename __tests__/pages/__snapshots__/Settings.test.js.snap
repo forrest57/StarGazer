@@ -33,7 +33,6 @@ exports[`<Settings /> renders correctly 1`] = `
           "paddingLeft": 20,
           "paddingRight": 20,
           "paddingTop": 4,
-          "textAlign": "center",
           "width": "100%",
         },
       ]
@@ -77,11 +76,8 @@ exports[`<Settings /> renders correctly 1`] = `
         <View
           style={
             Object {
-              "alignItems": "center",
               "backgroundColor": "#374151",
               "borderRadius": 6,
-              "display": "flex",
-              "justifyContent": "center",
               "paddingBottom": 16,
               "paddingLeft": 16,
               "paddingRight": 16,
@@ -119,8 +115,12 @@ exports[`<Settings /> renders correctly 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "height": "100%",
+        "bottom": 0,
         "justifyContent": "center",
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
       }
     }
   >

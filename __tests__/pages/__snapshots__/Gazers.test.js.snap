@@ -34,7 +34,6 @@ exports[`<Home /> renders correctly 1`] = `
           "paddingLeft": 20,
           "paddingRight": 20,
           "paddingTop": 4,
-          "textAlign": "center",
           "width": "100%",
         },
       ]
@@ -78,11 +77,8 @@ exports[`<Home /> renders correctly 1`] = `
         <View
           style={
             Object {
-              "alignItems": "center",
               "backgroundColor": "#374151",
               "borderRadius": 6,
-              "display": "flex",
-              "justifyContent": "center",
               "paddingBottom": 16,
               "paddingLeft": 16,
               "paddingRight": 16,
@@ -145,11 +141,8 @@ exports[`<Home /> renders correctly 1`] = `
         <View
           style={
             Object {
-              "alignItems": "center",
               "backgroundColor": "#374151",
               "borderRadius": 6,
-              "display": "flex",
-              "justifyContent": "center",
               "paddingBottom": 16,
               "paddingLeft": 16,
               "paddingRight": 16,

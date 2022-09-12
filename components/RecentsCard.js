@@ -1,4 +1,5 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
+
 import tw from 'twrnc'
 
 export default CardComponent = ({ text }) => (

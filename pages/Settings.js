@@ -29,7 +29,7 @@ export default SettingsPage = ({ navigation, route }) => {
         navigation={navigation}
         isSettingsShown={false}
       />
-      <View style={tw`h-full items-center justify-center`}>
+      <View style={styles.absoluteCenter}>
         <AnimatedButton
           width='full'
           Component={ResetButtonText}
@@ -41,14 +41,18 @@ export default SettingsPage = ({ navigation, route }) => {
 }
 
 const styles = StyleSheet.create({
-  header: {
-    marginLeft: 8,
-    color: 'gray',
-    fontSize: 28,
-  },
   buttonText: {
     color: 'gray',
     fontSize: 28,
     fontWeight: 'bold',
+  },
+  absoluteCenter: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 })

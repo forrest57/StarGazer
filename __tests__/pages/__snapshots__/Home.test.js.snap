@@ -12,7 +12,6 @@ exports[`<Home /> renders correctly 1`] = `
         "alignItems": "center",
         "backgroundColor": "#1f2937",
         "display": "flex",
-        "flexDirection": "column",
         "height": "100%",
         "justifyContent": "center",
       },
@@ -43,11 +42,14 @@ exports[`<Home /> renders correctly 1`] = `
     }
   >
     <TextInput
+      autoComplete="off"
       autoFocus={true}
       cursorColor="white"
       onChangeText={[Function]}
+      onSubmitEditing={[Function]}
       placeholder="User"
       placeholderTextColor="gray"
+      returnKeyType="next"
       style={
         Array [
           Object {
@@ -61,7 +63,8 @@ exports[`<Home /> renders correctly 1`] = `
           },
           Object {
             "color": "white",
-            "fontSize": 28,
+            "fontSize": 20,
+            "height": 70,
           },
         ]
       }
@@ -83,10 +86,13 @@ exports[`<Home /> renders correctly 1`] = `
       /
     </Text>
     <TextInput
+      autoComplete="off"
       cursorColor="white"
       onChangeText={[Function]}
+      onSubmitEditing={[Function]}
       placeholder="Repo"
       placeholderTextColor="gray"
+      returnKeyType="next"
       style={
         Array [
           Object {
@@ -100,7 +106,8 @@ exports[`<Home /> renders correctly 1`] = `
           },
           Object {
             "color": "white",
-            "fontSize": 28,
+            "fontSize": 20,
+            "height": 70,
           },
         ]
       }

@@ -5,11 +5,12 @@ exports[`<NoGazers/> renders correctly 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "display": "flex",
-      "height": "100%",
-      "justifyContent": "flex-start",
-      "paddingTop": 60,
-      "width": "100%",
+      "bottom": 0,
+      "justifyContent": "center",
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
     }
   }
 >

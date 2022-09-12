@@ -33,7 +33,6 @@ exports[`<Recents /> renders correctly 1`] = `
           "paddingLeft": 20,
           "paddingRight": 20,
           "paddingTop": 4,
-          "textAlign": "center",
           "width": "100%",
         },
       ]
@@ -77,11 +76,8 @@ exports[`<Recents /> renders correctly 1`] = `
         <View
           style={
             Object {
-              "alignItems": "center",
               "backgroundColor": "#374151",
               "borderRadius": 6,
-              "display": "flex",
-              "justifyContent": "center",
               "paddingBottom": 16,
               "paddingLeft": 16,
               "paddingRight": 16,
@@ -144,11 +140,8 @@ exports[`<Recents /> renders correctly 1`] = `
         <View
           style={
             Object {
-              "alignItems": "center",
               "backgroundColor": "#374151",
               "borderRadius": 6,
-              "display": "flex",
-              "justifyContent": "center",
               "paddingBottom": 16,
               "paddingLeft": 16,
               "paddingRight": 16,
@@ -166,8 +159,8 @@ exports[`<Recents /> renders correctly 1`] = `
   <RCTScrollView
     data={
       Array [
-        "lorem/Ipsum",
-        "Ipsum/lorem",
+        "lorem/ipsum",
+        "ipsum/lorem",
       ]
     }
     getItem={[Function]}
@@ -260,7 +253,7 @@ exports[`<Recents /> renders correctly 1`] = `
                   }
                 }
               >
-                lorem/Ipsum
+                lorem/ipsum
               </Text>
             </View>
           </View>
@@ -332,7 +325,7 @@ exports[`<Recents /> renders correctly 1`] = `
                   }
                 }
               >
-                Ipsum/lorem
+                ipsum/lorem
               </Text>
             </View>
           </View>
