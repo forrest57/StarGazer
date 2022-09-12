@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import { FontAwesome5 } from '@expo/vector-icons'
 
 export default NoGazers = () => (
-  <View style={styles.absoluteCenter}>
+  <View textId="noGazers" style={styles.absoluteCenter}>
     <FontAwesome5 name='sad-tear' size={150} color='#4078c0' />
     <Text style={styles.text}>No Stargazers?</Text>
   </View>

@@ -1,5 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<AnimatedButtton /> renders correctly 1`] = `
+<View
+  collapsable={false}
+  style={
+    Object {
+      "transform": Array [
+        Object {
+          "scale": 1,
+        },
+      ],
+      "width": "auto",
+    }
+  }
+>
+  <View
+    accessible={true}
+    activeOpacity={1}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderRadius": 6,
+        "display": "flex",
+      }
+    }
+  >
+    <Text>
+      lorem
+    </Text>
+  </View>
+</View>
+`;
+
 exports[`<animatedButtton /> renders correctly 1`] = `
 <View
   collapsable={false}

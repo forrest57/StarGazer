@@ -10,10 +10,10 @@ describe('<Navbar/>', () => {
     expect(tree).toMatchSnapshot()
   })
 
-  it('correctly displays passed prop', async () => {
+  it('correctly displays passed prop', () => {
     render(<NavBar barText={'lorem'} />)
     const barText = screen.getByText('lorem')
-    const gearIcon = await screen.getByTestId('GearButton')
+    const gearIcon = screen.getByTestId('GearButton')
     expect(barText).toBeTruthy()
     expect(gearIcon).toBeTruthy()
   })
@@ -23,6 +23,7 @@ describe('<Navbar/>', () => {
     try {
       isExisting = screen.getByTestId('GearButton')
     } catch (_) {
+      //missing always throws
       isExisting = false
     }
     expect(isExisting).toBe(false)

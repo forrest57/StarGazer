@@ -6,7 +6,7 @@ import renderer from 'react-test-renderer'
 const prop = 'lorem'
 const textComponent = () => <Text>{prop}</Text>
 
-describe('<animatedButtton />', () => {
+describe('<AnimatedButtton />', () => {
   it('renders correctly', () => {
     const tree = renderer
       .create(<AnimatedButton Component={textComponent} />)
@@ -23,7 +23,7 @@ describe('<animatedButtton />', () => {
         />
       )
       .toJSON()
-      const buttonText = buttonComponent.children[0].children[0].children[0]
-      expect(buttonText).toBe(prop)
+    const buttonText = buttonComponent.children[0].children[0].children[0]
+    expect(buttonText).toBe(prop)
   })
 })

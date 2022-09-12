@@ -1,9 +1,13 @@
-import AsyncStorage from '@react-native-async-storage/async-storage'
 import {
   appendRepoToHistory,
-  getRepoHistory,
   clearRepoHistory,
+  getRepoHistory,
 } from '../../sharedLogic/asyncStorageManager'
+
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import { cleanup } from '@testing-library/react-native'
+
+beforeEach(cleanup)
 
 const usedStorage = 'RepoHistory'
 describe('AsyncStorage manager', () => {

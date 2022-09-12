@@ -1,8 +1,8 @@
-import React from 'react'
-import { TextInput } from 'react-native'
-import renderer from 'react-test-renderer'
-// import App from '../App'
+import { render, screen } from '@testing-library/react-native'
+
 import Gazers from '../../pages/Gazers'
+import React from 'react'
+import renderer from 'react-test-renderer'
 
 const route = {
   params: {
@@ -14,7 +14,13 @@ const route = {
     ],
   },
 }
-describe('<Home />', () => {
+const routeEmpty = {
+  params: {
+    repo: 'loremIpsum',
+    data: [],
+  },
+}
+describe('<Gazers />', () => {
   it('renders correctly', () => {
     const tree = renderer.create(<Gazers route={route} />).toJSON()
     expect(tree).toMatchSnapshot()
@@ -24,11 +30,10 @@ describe('<Home />', () => {
     const fullRepoName = tree.children[0].children[1].children[0]
     expect(fullRepoName).toBe(route.params.repo)
   })
-  // it('correctly updates state', () => {
-  //   const setRepo = jest.fn()
-  //   const tree = shallow(<Home />)
-  //   console.log(tree)
-  //   tree.findByType(<TextInput />).simulate('changeText', 'loremipsum')
-  //   expect(setRepo).toHaveBeenCalledWith('loremipsum')
-  // })
+  it('correctly renders conditional item', () => {
+    render(<Gazers navigation={null} route={routeEmpty} />)
+    const conditionalComponent = screen.queryByText('No Stargazers?')
+    console.log(conditionalComponent)
+    expect(conditionalComponent).toBeTruthy()
+  })
 })

@@ -1,11 +1,11 @@
 // import App from '../App'
-import { act, fireEvent, render, screen } from '@testing-library/react-native'
+import { fireEvent, render, screen } from '@testing-library/react-native'
 
 import React from 'react'
 import Recents from '../../pages/Recents'
 import renderer from 'react-test-renderer'
 
-const { validateRequest, getGazers } = require('../../sharedLogic/apiManager')
+const { getGazers } = require('../../sharedLogic/apiManager')
 
 jest.mock('../../sharedLogic/apiManager.js', () => ({
   getGazers: jest.fn(),

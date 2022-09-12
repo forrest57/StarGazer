@@ -1,15 +1,18 @@
-import React from 'react'
-import renderer from 'react-test-renderer'
-const { validateRequest } = require('../../sharedLogic/apiManager')
-const { getRepoHistory } = require('../../sharedLogic/asyncStorageManager')
 import {
+  cleanup,
+  fireEvent,
   render,
   screen,
-  fireEvent,
   waitFor,
 } from '@testing-library/react-native'
-import Home from '../../pages/Home'
+
 import { Alert } from 'react-native'
+import Home from '../../pages/Home'
+import React from 'react'
+import renderer from 'react-test-renderer'
+
+const { validateRequest } = require('../../sharedLogic/apiManager')
+const { getRepoHistory } = require('../../sharedLogic/asyncStorageManager')
 
 jest.mock('../../sharedLogic/apiManager.js', () => ({
   validateRequest: jest.fn(),
@@ -17,10 +20,10 @@ jest.mock('../../sharedLogic/apiManager.js', () => ({
 jest.mock('../../sharedLogic/asyncStorageManager.js', () => ({
   getRepoHistory: jest.fn(),
 }))
-// jest.mock('../../sharedLogic/apiManager', () => ({
-//   validateRequest: jest.fn(),
-// }))
+
 jest.spyOn(Alert, 'alert')
+
+beforeEach(cleanup)
 
 describe('<Home />', () => {
   it('renders correctly', () => {
@@ -28,7 +31,7 @@ describe('<Home />', () => {
     expect(tree).toMatchSnapshot()
   })
 
-  it('correctly calls validateAndRedirect with inserted data', () => {
+  it('correctly calls validateAndRedirect with inserted valid data', () => {
     render(<Home />)
     const textInputs = screen.getAllByTestId('textInput')
     fireEvent.changeText(textInputs[0], 'user')
@@ -36,6 +39,22 @@ describe('<Home />', () => {
     fireEvent.press(screen.getByText('Check Gazers'))
     expect(validateRequest).toBeCalled()
   })
+  // it('correctly displays an alert message in case no text has been provided', async () => {
+  //   render(<Home />)
+  //   const { validateRequest } = jest.requireActual(
+  //     '../../sharedLogic/apiManager.js'
+  //   )
+  //   const textInputs = screen.getAllByTestId('textInput')
+  //   fireEvent.changeText(textInputs[0], '')
+  //   fireEvent.changeText(textInputs[1], '')
+  //   fireEvent.press(screen.getByText('Check Gazers'))
+  //   await waitFor(() =>
+  //     expect(Alert.alert).toHaveBeenCalledWith(
+  //       'error',
+  //       'empty search fields, add data first'
+  //     )
+  //   )
+  // })
   it('correctly calls getRepoHistory when wanting to redirect to recent', async () => {
     render(<Home />)
     fireEvent.press(screen.getByText('Recent repos'))

@@ -13,6 +13,7 @@ exports[`<NoGazers/> renders correctly 1`] = `
       "top": 0,
     }
   }
+  textId="noGazers"
 >
   <Text />
   <Text

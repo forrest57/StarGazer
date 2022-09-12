@@ -1,14 +1,17 @@
-import { waitFor } from '@testing-library/react-native'
+import { cleanup, waitFor } from '@testing-library/react-native'
 import { getGazers, validateRequest } from '../../sharedLogic/apiManager'
+
 import { appendRepoToHistory } from '../../sharedLogic/asyncStorageManager'
 import axios from 'axios'
 
-// const axios = jest.createMockFromModule('axios')
 jest.mock('axios')
 jest.mock('../../sharedLogic/asyncStorageManager.js', () => ({
   appendRepoToHistory: jest.fn(),
 }))
+
 afterEach(jest.resetAllMocks)
+beforeEach(cleanup)
+
 class CustomStatusError extends Error {
   constructor(status) {
     super()
@@ -16,27 +19,22 @@ class CustomStatusError extends Error {
   }
 }
 describe('Api Call', () => {
-  axios.get.mockRejectedValueOnce(new Error())
   it('throws an error if the api rate is exceeded or the repo is not valid', async () => {
+    axios.get.mockRejectedValueOnce(new Error())
     await expect(getGazers('vuejs', 'vue')).rejects.toThrow()
   })
 
-  axios.get.mockResolvedValueOnce({ response: { status: 200 } })
   it('returns data if api rate is not exceeded', () => {
-    getGazers('allGood', 'valid')
-      .then((res) => {
-        // console.log(res)
-        expect(res.response.status).toBe(200)
-      })
-      .catch((err) => {
-        expect(err.response.status).toBe(403)
-      })
+    axios.get.mockResolvedValueOnce({ response: { status: 200 } })
+    getGazers('allGood', 'valid').then((res) => {
+      expect(res.response.status).toBe(200)
+    })
   })
 })
 
 describe('Data Validator', () => {
-  axios.get.mockResolvedValueOnce({ response: { status: 200 } })
   it('appends repo to history if it exists', async () => {
+    axios.get.mockResolvedValueOnce({ response: { status: 200 } })
     validateRequest('allGood', 'valid')
     await waitFor(() =>
       expect(appendRepoToHistory).toHaveBeenCalledWith('allGood/valid')
@@ -50,7 +48,7 @@ describe('Data Validator', () => {
       const res = await validateRequest('vuejs', 'vue')
       fail(`API has not thrown, data= ${res}`)
     } catch (e) {
-      expect(e[0]).toBe('error')
+      expect(e[1]).toBe('Api rate exceeded, try again later.')
     }
   })
   it('throws an alert-formatted error if the gitHub api throws 404', async () => {
@@ -60,7 +58,7 @@ describe('Data Validator', () => {
       const res = await validateRequest('vuejs', 'vue')
       fail(`API has not thrown, data= ${res}`)
     } catch (e) {
-      expect(e[0]).toBe('error')
+      expect(e[1]).toBe('No repo found with the provided data')
     }
   })
   it('throws an alert-formatted error if the gitHub api throws some other error', async () => {
@@ -70,7 +68,7 @@ describe('Data Validator', () => {
       const res = await validateRequest('vuejs', 'vue')
       fail(`API has not thrown, data= ${res}`)
     } catch (e) {
-      expect(e[0]).toBe('error')
+      expect(e[1]).toBe('Unknown error, try again later')
     }
   })
   it('throws an alert-formatted error if the provided data is null', async () => {

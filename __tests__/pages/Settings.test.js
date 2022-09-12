@@ -1,22 +1,20 @@
+import { fireEvent, render, screen } from '@testing-library/react-native'
 
 import React from 'react'
-// import { TextInput } from 'react-native'
-import renderer from 'react-test-renderer'
-// import App from '../App'
-const { clearRepoHistory } = require('../../sharedLogic/asyncStorageManager')
-import { render, screen, fireEvent } from '@testing-library/react-native'
 import Settings from '../../pages/Settings'
+import renderer from 'react-test-renderer'
+const { clearRepoHistory } = require('../../sharedLogic/asyncStorageManager')
 
 jest.mock('../../sharedLogic/asyncStorageManager.js', () => ({
   clearRepoHistory: jest.fn(),
 }))
+
 describe('<Settings />', () => {
   it('renders correctly', () => {
     const tree = renderer.create(<Settings />).toJSON()
     expect(tree).toMatchSnapshot()
   })
   it('correctly calls the history-clearing function', () => {
-    // const spy=jest.spyOn()
     render(<Settings />)
     fireEvent.press(screen.getByText('Reset app data'))
     expect(clearRepoHistory).toBeCalled()
