@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1662998572107" clover="3.2.0">
-  <project timestamp="1662998572107" name="All files">
-    <metrics statements="159" coveredstatements="142" conditionals="41" coveredconditionals="36" methods="46" coveredmethods="37" elements="246" coveredelements="215" complexity="0" loc="159" ncloc="159" packages="4" files="12" classes="12"/>
+<coverage generated="1663001171944" clover="3.2.0">
+  <project timestamp="1663001171944" name="All files">
+    <metrics statements="161" coveredstatements="143" conditionals="41" coveredconditionals="36" methods="47" coveredmethods="37" elements="249" coveredelements="216" complexity="0" loc="161" ncloc="161" packages="4" files="12" classes="12"/>
     <package name="Stargazers_viewer">
       <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="App.js" path="/home/forrest/Documents/code/Stargazers_viewer/App.js">
@@ -56,31 +56,33 @@
       </file>
     </package>
     <package name="Stargazers_viewer.pages">
-      <metrics statements="80" coveredstatements="74" conditionals="26" coveredconditionals="21" methods="26" coveredmethods="23"/>
+      <metrics statements="82" coveredstatements="75" conditionals="26" coveredconditionals="21" methods="27" coveredmethods="23"/>
       <file name="Gazers.js" path="/home/forrest/Documents/code/Stargazers_viewer/pages/Gazers.js">
-        <metrics statements="22" coveredstatements="18" conditionals="12" coveredconditionals="8" methods="8" coveredmethods="6"/>
+        <metrics statements="24" coveredstatements="19" conditionals="12" coveredconditionals="8" methods="9" coveredmethods="6"/>
         <line num="11" count="2" type="stmt"/>
         <line num="12" count="18" type="stmt"/>
         <line num="15" count="8" type="stmt"/>
         <line num="16" count="8" type="stmt"/>
         <line num="17" count="8" type="stmt"/>
-        <line num="21" count="8" type="stmt"/>
+        <line num="19" count="8" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
         <line num="22" count="4" type="stmt"/>
         <line num="23" count="4" type="stmt"/>
-        <line num="24" count="4" type="stmt"/>
-        <line num="25" count="4" type="cond" truecount="0" falsecount="2"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
-        <line num="39" count="4" type="stmt"/>
-        <line num="43" count="8" type="stmt"/>
-        <line num="45" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="4" type="cond" truecount="0" falsecount="2"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="32" count="4" type="stmt"/>
+        <line num="36" count="8" type="stmt"/>
+        <line num="38" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="41" count="8" type="stmt"/>
+        <line num="42" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="45" count="8" type="stmt"/>
+        <line num="46" count="6" type="cond" truecount="2" falsecount="0"/>
         <line num="48" count="8" type="stmt"/>
-        <line num="49" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="52" count="8" type="stmt"/>
-        <line num="53" count="6" type="cond" truecount="2" falsecount="0"/>
-        <line num="55" count="8" type="stmt"/>
-        <line num="68" count="22" type="stmt"/>
+        <line num="61" count="22" type="stmt"/>
       </file>
       <file name="Home.js" path="/home/forrest/Documents/code/Stargazers_viewer/pages/Home.js">
         <metrics statements="32" coveredstatements="30" conditionals="8" coveredconditionals="7" methods="10" coveredmethods="9"/>

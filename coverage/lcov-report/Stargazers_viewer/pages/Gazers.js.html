@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">78.26% </span>
+                <span class="strong">73.07% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>18/23</span>
+                <span class='fraction'>19/26</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/8</span>
+                <span class='fraction'>6/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">81.81% </span>
+                <span class="strong">79.16% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>18/22</span>
+                <span class='fraction'>19/24</span>
             </div>
         
             
@@ -137,13 +137,7 @@
 <a name='L72'></a><a href='#L72'>72</a>
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a>
-<a name='L79'></a><a href='#L79'>79</a>
-<a name='L80'></a><a href='#L80'>80</a>
-<a name='L81'></a><a href='#L81'>81</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L75'></a><a href='#L75'>75</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -161,22 +155,15 @@
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -223,6 +210,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Alert, FlatList, SafeAreaView } from 'react-native'
 import { useEffect, useState } from 'react'
 &nbsp;
@@ -238,25 +226,18 @@ const cardRenderer = ({ item }) =&gt; (
 )
 export default Gazers = ({ navigation, route }) =&gt; {
   const [repos, setRepos] = useState({ data: route.params.data })
-  const [currentPage, setCurrentPage] = useState({ value: 1 })
+  const [currentPage, setCurrentPage] = useState({ value: 2 })
   const [isLoading, setIsLoading] = useState(false)
 &nbsp;
-  //when when no more pages can be found, or an error is thrown
-  //it stays in a constant loading state, thus not rendering more.
   const loadNew = async () =&gt; {
     setIsLoading(true)
     try {
+      console.log(currentPage.value)
       const res = await loadNextPage(route.params.repo, currentPage.value)
       if (res.data.length) {
-        //tried this, to force no shallow equality of keys, in order to rerender, but to no avail
-        // const data = {
-        //   data: [...repos.data, ...res.data].map((item) =&gt; (
-        //     {id:item.id+1,avatar_url:item.avatar_url,login:item.login}
-        //     )),
-        // }
 <span class="cstat-no" title="statement not covered" >        setRepos(<span class="fstat-no" title="function not covered" >(o</span>ldRepos) =&gt; (<span class="cstat-no" title="statement not covered" >{ data: [...oldRepos.data, ...res.data] })</span>)</span>
+<span class="cstat-no" title="statement not covered" >        console.log(repos.data.filter(<span class="fstat-no" title="function not covered" >(x</span>) =&gt; <span class="cstat-no" title="statement not covered" >x.id === repos.data[0].id)</span>)</span>
 <span class="cstat-no" title="statement not covered" >        setIsLoading(false)</span>
-        //still sometimes renders 2x the same gazer, maybe an observable would fix this
       } else {
 <span class="cstat-no" title="statement not covered" >        return</span>
       }
@@ -295,6 +276,7 @@ export default Gazers = ({ navigation, route }) =&gt; {
           onEndReachedThreshold={1}
           refreshing={isLoading}
           ListFooterComponent={LoadingMoreComponent}
+          extraData={currentPage.value}
         /&gt;
       ) : (
         &lt;NoGazers /&gt;
@@ -310,7 +292,7 @@ export default Gazers = ({ navigation, route }) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-09-12T16:02:52.096Z
+                at 2022-09-12T16:46:11.936Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -13,25 +13,18 @@ const cardRenderer = ({ item }) => (
 )
 export default Gazers = ({ navigation, route }) => {
   const [repos, setRepos] = useState({ data: route.params.data })
-  const [currentPage, setCurrentPage] = useState({ value: 1 })
+  const [currentPage, setCurrentPage] = useState({ value: 2 })
   const [isLoading, setIsLoading] = useState(false)
 
-  //when when no more pages can be found, or an error is thrown
-  //it stays in a constant loading state, thus not rendering more.
   const loadNew = async () => {
     setIsLoading(true)
     try {
+      console.log(currentPage.value)
       const res = await loadNextPage(route.params.repo, currentPage.value)
       if (res.data.length) {
-        //tried this, to force no shallow equality of keys, in order to rerender, but to no avail
-        // const data = {
-        //   data: [...repos.data, ...res.data].map((item) => (
-        //     {id:item.id+1,avatar_url:item.avatar_url,login:item.login}
-        //     )),
-        // }
         setRepos((oldRepos) => ({ data: [...oldRepos.data, ...res.data] }))
+        console.log(repos.data.filter((x) => x.id === repos.data[0].id))
         setIsLoading(false)
-        //still sometimes renders 2x the same gazer, maybe an observable would fix this
       } else {
         return
       }
@@ -70,6 +63,7 @@ export default Gazers = ({ navigation, route }) => {
           onEndReachedThreshold={1}
           refreshing={isLoading}
           ListFooterComponent={LoadingMoreComponent}
+          extraData={currentPage.value}
         />
       ) : (
         <NoGazers />
