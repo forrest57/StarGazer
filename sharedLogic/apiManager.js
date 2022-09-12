@@ -8,6 +8,17 @@ export const getGazers = async (user, repo) => {
   return res
 }
 
+export const loadNextPage = async (repoString, pageToLoad) => {
+  try {
+    const res = await axios.get(
+      `${baseUrl}/${repoString}/stargazers?page=${pageToLoad}`
+    )
+    return res
+  } catch (e) {
+    throw switchErrorStatus(err.response.status)
+  }
+}
+
 export const validateRequest = async (user, repo) => {
   const isDataProvided = user && repo
   if (isDataProvided) {
@@ -16,16 +27,20 @@ export const validateRequest = async (user, repo) => {
       await appendRepoToHistory(`${user}/${repo}`)
       return res
     } catch (err) {
-      switch (err.response.status) {
-        case 404:
-          throw ['error', 'No repo found with the provided data']
-        case 403:
-          throw ['error', 'Api rate exceeded, try again later.']
-        default:
-          throw ['error', 'Unknown error, try again later']
-      }
+      throw switchErrorStatus(err.response.status)
     }
   } else {
     throw ['error', 'empty search fields, add data first']
+  }
+}
+
+const switchErrorStatus = (status) => {
+  switch (status) {
+    case 404:
+      return ['error', 'No repo found with the provided data']
+    case 403:
+      return ['error', 'Api rate exceeded, try again later.']
+    default:
+      return ['error', 'Unknown error, try again later']
   }
 }

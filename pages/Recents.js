@@ -1,12 +1,12 @@
-import { Alert, FlatList, SafeAreaView, StyleSheet } from 'react-native'
+import { Alert, FlatList, SafeAreaView } from 'react-native'
 
 import AnimatedButton from '../components/AnimatedButton'
 import NavBar from '../components/NavBar'
 import RecentsCard from '../components/RecentsCard'
 import { StatusBar } from 'expo-status-bar'
-import { getGazers } from '../sharedLogic/apiManager'
 import tw from 'twrnc'
 import { useState } from 'react'
+import { validateRequest } from '../sharedLogic/apiManager'
 
 export default RecentsPage = ({ navigation, route }) => {
   const [isLoading, setIsLoading] = useState(false)
@@ -16,12 +16,14 @@ export default RecentsPage = ({ navigation, route }) => {
     const splitted = repoString.split('/')
     setIsLoading(true)
     try {
-      const res = await getGazers(...splitted)
+      const res = await validateRequest(...splitted)
+      console.log('RES:', res)
       setIsLoading(false)
       navigation.navigate('Gazers', { data: res.data, repo: repoString })
     } catch (errorMsg) {
+      console.log('err:', errorMsg)
       setIsLoading(false)
-      Alert.alert(errorMsg)
+      Alert.alert(...errorMsg)
     }
   }
 

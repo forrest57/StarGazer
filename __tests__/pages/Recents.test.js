@@ -5,10 +5,10 @@ import React from 'react'
 import Recents from '../../pages/Recents'
 import renderer from 'react-test-renderer'
 
-const { getGazers } = require('../../sharedLogic/apiManager')
+const { validateRequest } = require('../../sharedLogic/apiManager')
 
 jest.mock('../../sharedLogic/apiManager.js', () => ({
-  getGazers: jest.fn(),
+  validateRequest: jest.fn(),
 }))
 const route = {
   params: {
@@ -34,6 +34,6 @@ describe('<Recents />', () => {
     render(<Recents route={route} />)
     const firstRepo = screen.getByText('lorem/ipsum')
     fireEvent.press(firstRepo)
-    expect(getGazers).toBeCalledWith('lorem', 'ipsum')
+    expect(validateRequest).toBeCalledWith('lorem', 'ipsum')
   })
 })
