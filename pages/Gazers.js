@@ -23,7 +23,6 @@ export default Gazers = ({ navigation, route }) => {
       const res = await loadNextPage(route.params.repo, currentPage.value)
       if (res.data.length) {
         setRepos((oldRepos) => ({ data: [...oldRepos.data, ...res.data] }))
-        console.log(repos.data.filter((x) => x.id === repos.data[0].id))
         setIsLoading(false)
       } else {
         return
